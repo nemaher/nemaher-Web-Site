@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV221 Intro Javascript - Lab Quiz 1</title>
+<script>
+var studentName = "Nicholas Maher";//students name
+var courseName = "WDV221";// corse name
+var totalSales = 0;
+function computeCost(){
+	
+	//gets price of items
+	var itemPrice = 0;
+	itemPrice = document.getElementById("textfield").value;
+	
+	
+	//gets the amount of items purchased
+	var numberPurchased = 0;
+	numberPurchased = document.getElementById("textfield2").value;
+	
+	//caculates how much that sale costs
+	var salePrice;
+	salePrice = parseFloat(itemPrice) * parseInt(numberPurchased);
+	document.getElementById("textfield3").value = salePrice.toFixed(2);
+	//found the function toFixed() online so that my decimals don't go past 2 places like currency
+	
+	//caculates how much the sales tax is
+	var saleTax;
+	saleTax = parseFloat(salePrice) * .06;
+	document.getElementById("tax").innerHTML = "$"+saleTax.toFixed(2);
+	
+	//sets new total with sales tax
+	var newTotal;
+	newTotal = parseFloat(salePrice) + parseFloat(saleTax);
+	
+	//displays running total
+	totalSales = parseFloat(totalSales) + parseFloat(newTotal);
+	document.getElementById("sales").innerHTML = "$"+totalSales.toFixed(2);
+}
+
+</script>
+</head>
+
+<body>
+<h1>WDV221 Intro Javascript</h1>
+<h2>Lab Exam #1</h2>
+<p>Please do your work inside this page. You are welcome to modify the html of this page as needed for the project. </p>
+<p>1. Define a global variable called <strong>studentName</strong> and assign your name to the field.</p>
+<p>2. Define a global variable called <strong>courseName</strong> and assign the course name &quot;WDV221 Intro to Javascript&quot; to the variable.</p>
+<p>3. Define a global variable called totalSales and assign it an initial value of 0.</p>
+<p>4. Create a runtime script that will display studentName as an H1 element and the courseName as an H2 element above the form. </p>
+<script type="text/javascript">//writes my name on the document
+
+	document.write("<h1>" + studentName + "</h1>");
+	document.write("<h2>" + courseName + "</h2>");
+
+</script>
+<form id="form1" name="form1" method="post" action="">
+  <h2>Hello <em>
+<script type="text/javascript">//writes the students Name on the document
+
+	document.write(studentName);
+
+</script>
+</em>! Welcome back to MyShoppingCart</h2>
+
+  <table>
+    <tr>
+      <td>Item Price:</td>
+      <td><input type="text" name="textfield" id="textfield" /></td>
+    </tr>
+    <tr>
+      <td>Number Purchased:</td>
+      <td><input type="text" name="textfield2" id="textfield2" /></td>
+    </tr>
+    <tr>
+      <td>Sale Price:</td>
+      <td><input type="text" name="textfield3" id="textfield3" /></td>
+    </tr>
+    <tr>
+      <td>Sales Tax: </td>
+      <td><p id="tax"> </p></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Total Sales: </td>
+      <td><p id="sales"> </p></td>
+    </tr>
+  </table>
+  <p>
+    <input type="button" name="button" id="button" value="Calculate Sale" onclick="computeCost()" />
+    <input type="reset" name="button2" id="button2" value="Reset" />
+  </p>
+</form>
+<p>5. Use javascript to display the value of the studentName variable where <em>yourName</em> is currently displayed.</p>
+<p>6. Change one of the submit buttons to &quot;Calculate Sale&quot;. Apply an  event handler to call the computeCost function.</p>
+<p>7. Change the other button to a reset button.</p>
+<p>8. Create a function called<strong> computeCost</strong>. The <strong>computeCost</strong> function should do the following things:</p>
+<ol>
+  <li>Create a local variable called itemPrice. Initialize it to zero. Take the information entered in the Item Price textfield and place it in the variable.</li>
+  <li>Create a local variable called numberPurchased. Initialize it to zero Take the information entered in the Number Purchased textfield and place it in the variable.</li>
+  <li>Create a local variable called salePrice. </li>
+  <li>The function should multiply itemPrice * numberPurchased and assign it to salePrice.</li>
+  <li>Display the value of salePrice in the textfield next to the words Sale Price:</li>
+  <li>Use the combined operator to add salePrice to totalSales. This will be the running total for the order. </li>
+  <li>Display the value of the totalSales variable next the words  Total Sales:.  Use .innerHTML to make this happen.</li>
+</ol>
+<h3>Note: Even if you do not complete the function make sure it runs without breaking. Partial credit will be given for any work that runs corectly. </h3>
+<p><strong>Extra Credit:</strong></p>
+<ul>
+  <li>Insert a descirption called Sales Tax: below Sale Price:</li>
+  <li>Calculate the Iowa sales tax of 6% on the salePrice variable.</li>
+  <li>Display the sales tax amount next to the Sales Tax: words.  Use .innerHTML to make this happen.</li>
+  <li>Add the sales tax amount to the salePrice before adding the sale amount to totalSales.</li>
+</ul>
+</body>
+</html>

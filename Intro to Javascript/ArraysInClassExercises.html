@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV221 Intro Javascript - Project-6 Arrays In Class Exercises</title>
+
+<script>
+teams = new Array("Dragons","Pirates","Bears");
+
+alert(teams);// 1. alerting whats in the array teams
+
+alert(teams[0]);// 2. alerting the first row in the teams array
+
+scores = new Array(0,0,0);//6. new array called scores
+
+//8. function that displays the team and what there score is.
+function displayTeams(){
+	for(var i = 0; i < teams.length; i++){
+		document.write("<p>" + teams[i] + " " + scores[i] + "</p>");
+	}
+}
+//9. add 3 to all the scores in the array
+for(i = 0; i < scores.length; i++){
+	scores[i] += 3;
+}
+</script>
+
+
+
+
+</head>
+
+<body>
+<h2>WDV221 Intro Javascript</h2>
+<h3>Project-6 Arrays - In Class Exercises</h3>
+<hr />
+<p>Please complete the following exercises on this page. When complete post the   page to your WDV221 folder on the server. Make a link in your WDV221 Intro   Javascript page for this assignment. Contact your instructor and demonstrate   that you have completed the assignment. </p>
+<p>Using Blackboard complete the In Class Exercise Assignment. Download your   Homework project and being working on it with your remaining time. </p>
+<h3>For each exercise use a comment line to put the Exercise number within the   script. Also place a short description of what the script is doing.</h3>
+<hr />
+<p>For each of the following use the teams array provided in the script of this page. </p>
+<p>1. Display the array in an alert.</p>
+<p>2. Display the first row of the array in an alert.</p>
+<p>3. Use a for loop to write each row of the array out to this page. Each row should be in a paragraph.</p>
+<script>// 3. writing the teams array on the page in individual paragraphs
+for(var i = 0 ; i< teams.length ; i++){
+	document.write("<p>" + teams[i] + "</p>");
+}
+</script>
+<p>4. Use a while loop to write each row of the array out to this page. Each row should be in a paragraph.</p>
+<script>//this writes the team array to the screen in separate paragraphs
+var i = 0;
+while(i < teams.length){
+	document.write("<p>" + teams[i] + "</p>");
+	i++;
+}
+
+</script>
+<p>5. Use a loop to write out each row of the array as list items within the following list.</p>
+<ul>
+List of Team Names
+<script>//5. writes team names to the screen in an unordered list
+for (var i = 0; i < teams.length; i++){
+	document.write("<li>" + teams[i] + "</li>");
+}
+</script>
+</ul>
+<p>6. Create an array called scores. It will have three rows. Load a 0 into each row. This is a parallel array to teams. </p>
+<p>7. Use a loop to write out each row of the scores array as list items in the following list. </p>
+<ul>Team Scores
+<script>//7. scores array are placed in an unordered list
+for(var i = 0; i < scores.length; i++){
+	document.write("<li>" + scores[i] + "</li>");	
+}
+</script>
+</ul>
+<p>8. Create a function called displayTeams( ). It will use a loop to write out the Team name and score in the same paragraph. Run the function. Your output should look like:</p>
+<p>Hustlers	0</p>
+<script>
+displayTeams();//running the displayTeams function
+</script>
+<p>9. Write a loop that will 3 to each value in the scores array. Run the displayTeams( ) function to display the update scores. </p>
+<script>
+displayTeams()
+</script>
+<p>10. Write a function that will search the team array for a given name. If it finds the name it will display the team's score. If not a message &quot;Team is not listed' will be displayed. HINT: Check your notes for an example to start with. Activate this function with a button. </p>
+<script>//10. searches the arrays for the teams and displayes their score in an alert
+function getScores(){
+var teamToFind = document.getElementById("teamLookUp").value;
+var teamScore = "Team not found.";
+	for(var i = 0; i < teams.length; i++)
+	{
+		//see if we have the team in the Teams array
+		if(teamToFind == teams[i])
+		{
+			//if found
+			teamScore = scores[i];
+			break;
+		}
+	}
+document.getElementById("teamScore").value = teamScore;
+}
+</script>
+ <table width="24%" border="0">
+    <tr>
+      <td width="39%">Team Name:</td>
+      <td width="61%"><input type="text" name="textfield" id="teamLookUp" /></td>
+    </tr>
+    <tr>
+      <td>Score:</td>
+      <td><input type="text" name="textfield2" id="teamScore" /></td>
+    </tr>
+  </table>
+<input type="button" value="Search for team score" onclick="getScores()"/>
+<p>&nbsp;</p>
+
+</body>
+</html>

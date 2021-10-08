@@ -1,0 +1,153 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script>
+
+
+function largeNumber()
+{	
+	var value1 = document.getElementById("value1").value;
+	var value2 = document.getElementById("value2").value;
+	if (value1 > value2)
+	{
+		document.getElementById("results").value = value1;
+	}
+	else
+	{
+		document.getElementById("results").value = value2;
+	}
+}
+function smallNumber()
+{
+	var value1 = document.getElementById("value1").value;
+	var value2 = document.getElementById("value2").value;
+	if (value1 < value2)
+	{
+		document.getElementById("results").value = value1;
+	}
+	else
+	{
+		document.getElementById("results").value = value2;
+	}
+}
+function equal()
+{
+	var value1 = document.getElementById("value1").value;
+	var value2 = document.getElementById("value2").value;
+	if (value1 == value2)
+	{
+		document.getElementById("results").value = "Equal";
+	}
+	else
+	{
+		document.getElementById("results").value = "NOT Equal";
+	}
+}
+function caseSensitive()
+{
+	var value1 = document.getElementById("value1").value;
+	var value2 = document.getElementById("value2").value;
+	if (value1 == value2)
+	{
+		document.getElementById("results").value = "Same";
+	}
+	else
+	{
+		document.getElementById("results").value = "Different";
+	}
+}
+function caseInsensitive()
+{
+	var value1 = document.getElementById("value1").value;
+	var value2 = document.getElementById("value2").value;
+	if (value1.toUpperCase() == value2.toUpperCase())
+	{
+		document.getElementById("results").value = "Same";
+	}
+	else
+	{
+		document.getElementById("results").value = "Different";
+	}
+}
+function matchColor()
+{
+	var color = document.getElementById("textfield").value;
+	if (color.toLowerCase() == "blue" || color.toLowerCase() == "green" || color.toLowerCase() == "red")
+	{
+		document.getElementById("result").innerHTML= "Match";
+		
+	}
+	else
+	{
+		document.getElementById("result").innerHTML = "Not Found";
+	}
+	
+}
+
+</script>
+</head>
+
+<body>
+<h2>WDV221 Intro Javascript</h2>
+<h3>Project-4 Comparisons and If Statements - In Class Exercises</h3>
+<hr />
+<p>Please complete the following exercises on this page. When complete post the   page to your WDV221 folder on the server. Make a link in your WDV221 Intro   Javascript page for this assignment. Contact your instructor and demonstrate   that you have completed the assignment. </p>
+<p>Using Blackboard complete the In Class Exercise Assignment. Download your   Homework project and being working on it with your remaining time. </p>
+<h3>For each exercise use a comment line to put the Exercise number within the   script. Also place a short description of what the script is doing.</h3>
+<hr />
+
+<form id="form1" name="form1" method="post" action="">
+  <p>Use this form to gather input and display results.</p>
+  <p>Value 1:  
+  	<input type="text" name="value1" id="value1" />
+  </p>
+<p>Value 2: 
+    <input type="text" name="value2" id="value2" />
+  </p>
+  <p>Result: 
+    <input type="text" name="results" id="results" />
+  </p>
+  <p>
+    <input type="reset" name="Reset" id="button" value="Reset" />
+  </p>
+</form>
+<p>Use the form above for the following exercises:</p>
+<p>1. 
+  <input type="submit" name="button2" id="button2" value="Display Largest Number" onclick="largeNumber()"/>
+ Enter a number in Value 1 and Value 2. Display the larger number in the Result field of the form above.</p>
+<p>2. 
+  <input type="submit" name="button" id="button3" value="Display Smallest Number" onclick="smallNumber()"/>
+Enter a number in Value 1 and Value 2. Display the smaller number in the Result field of the form above.</p>
+<p>3. 
+  <input type="submit" name="button3" id="button4" value="Are they Equal" onclick="equal()"/>
+  Enter a number in Value 1 and Value 2. Display &quot;Equal&quot;in the Result field of the form above if both values are the same otherwise display &quot;Not Equal&quot;. 
+</p>
+<p>For the next two exercises enter a name in Value 1 and Value 2. </p>
+<p>5. 
+  <input type="submit" name="button4" id="button5" value="Same Name - Case Sensitive" onclick="caseSensitive()" />
+Display &quot;Same&quot; in the Results field if both names are the same including capital letters, otherwise put &quot;Different&quot; in the Fesults field.</p>
+<p>6. 
+  <input type="submit" name="button5" id="button6" value="Same Name - Case Insensitive" onclick="caseInsensitive()"/>
+Display &quot;Same&quot; in the Results field if both names are the same regardless of capital letter., otherwise put &quot;Different&quot; in the Results field.</p>
+
+<p>&nbsp;</p>
+<h3>PART II</h3>
+<form id="form2" name="form2" method="post" action="">
+  <p>Color: 
+    <input type="text" name="textfield" id="textfield" />
+  </p>
+  <p>Result: <span id="result"></span></p>
+  <p>
+    <input type="button" name="button7" id="button7" value="Match Color" onclick="matchColor()"/>
+    <input type="reset" name="button8" id="button8" value="Reset" />
+  </p>
+</form>
+<p>Use the form above for the following exercises:</p>
+<p>1. Create a function called matchColor( ). The function will take the color entered in the Color field and see if it is standard color. The standard colors are Red, Green and Blue.</p>
+<p>2. The function will display &quot;Match&quot; if the color entered is one of the standard colors or &quot;Not Found&quot; if it isn't. Capital letters do not matter so make your comparison case insensitive. </p>
+<p>3. Display your message in the Result paragraph. Use the .innerHTML property to display your message. </p>
+</body>
+</html>

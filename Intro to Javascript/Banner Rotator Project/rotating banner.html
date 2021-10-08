@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Make a rotating banner</title>
+<script>
+
+	// Banner Rotator logic
+ 
+	//Load banner elements into array
+  	var banners = new Array("Earth.jpg","Pluto.jpg","Mars.jpg")
+
+	//Set banner counter to 0  This is the loop control variable
+  	var bnrCntr = 0
+  
+	//Function that actually rotates the banner
+    function bancycle() 
+	{
+
+      		if (bnrCntr == banners.length) {		//if the loop control is the same value as the length of the picture array
+        		bnrCntr = 0							//start over with the first image in the array
+      	  	}
+		
+    	  document.Banner.src = banners[bnrCntr];	//assigns an picture file to the image object on the page
+
+ 	  	  bnrCntr = bnrCntr + 1;					//updates the loop countrol to get the next picture file
+
+    	  setTimeout("bancycle()",3000);			//run this again in 3 seconds)
+
+
+    }//end of bancycle() Function
+
+//End Banner Rotator Logic
+
+
+</script>
+</head>
+
+<body onLoad="bancycle()">
+
+<img name="Banner">
+
+</body>
+</html>

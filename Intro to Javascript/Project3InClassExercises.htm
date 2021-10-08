@@ -1,0 +1,140 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV221 Intro Javascript - Variables and Data Types In Class Exercises</title>
+
+<style>
+
+body {background-color:#C99;
+}
+
+.highlightTitle	{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-style:italic;
+	font-size:14px;
+	text-decoration:underline;
+	color:#096;
+}
+
+
+</style>
+<script>//initialize global variables
+	var v1=3;
+	var v2=4;
+	var v3="8.3"
+	
+	function getValue1()//8. display the value1 entry
+	{
+		var value1 = document.getElementById("value1").value;
+		document.getElementById("displayValue1").value = value1;
+		setInnerHTML("displayValue1",value1);
+	}
+	function getValue2()//9. display the value2 entry
+	{
+		var value2= document.getElementById("value2").value;
+		document.getElementById("displayValue2").value = value2;
+		setInnerHTML("displayValue2",value2);
+	}
+	function multiply()//10. multiply the 2 entries 
+	{
+		var value1 = document.getElementById("value1").value;
+		var value2 = document.getElementById("value2").value;
+		var answer = value1 * value2;
+		document.getElementById("result3").value = answer;
+		setInnerHTML("result3", answer);
+	}
+	function add()//11. add the 2 entries
+	{
+		var value1 = document.getElementById("value1").value;
+		var value2 = document.getElementById("value2").value;
+		var answer = value1 + value2;
+		document.getElementById("result1").value = answer;
+		setInnerHTML("result1", answer);
+	}
+	function add2()//12. add the 2 parsed entries
+	{
+		var value1 = document.getElementById("value1").value;
+		var value2 = document.getElementById("value2").value;
+		var answer = parseInt(value1) + parseInt(value2);
+		document.getElementById("result2").value = answer;
+		setInnerHTML("result2", answer);
+	}
+	function setInnerHTML(id, value)
+	{
+		document.getElementById(id).innerHTML=value;
+	}
+</script>
+</head>
+
+<body>
+<h2>WDV221 Intro Javascript</h2>
+<h3>Project 3 - Calculations and Textfields - In Class Exercises</h3>
+<hr />
+<p>Please complete the following exercises on this page. When complete post the page to your WDV221 folder on the server. Make a link in your WDV221 Intro Javascript page for this assignment. Contact your instructor and demonstrate that you have completed the assignment. </p>
+<p>Using Blackboard complete the In Class Exercise Assignment. Download your Homework project and being working on it with your remaining time. </p>
+<h3>For each exercise use a comment line to put the Exercise number within the script. Also place a short description of what the script is doing.</h3>
+<hr />
+<h3>Part I</h3>
+<p>1. Define and initialize three variables called v1, v2 and v3 with the following values:  3, 4, &quot;8.3&quot;. They should have global scope.</p>
+<p>2. Display the result of v1 + v2 using  document.write. <em>place results here </em>
+  <script>// Addition with javascript
+		document.write(v1 + v2);
+	</script></p>
+
+<p>3. Display the result of v2 + v3 using  document.write. 
+<script>//Concatenate an integer and a string togther
+		document.write(v2 + v3);
+	</script></p>
+<p>4. Dispaly the result of v1 * v2 using document.write. 
+<script>//Multiply with javascript
+		document.write(v1 * v2);
+	</script></p>
+<p>5. Display the result of v2 * v3 using document.write. 
+<script>//Multiply an integer and a string togther
+		document.write(v2 * v3)
+	</script></p>
+<h3>Part II</h3>
+<p>6. Display the result of v1 + v3 using  parseInt( ) on v3 using document.write. <em>place results here </em>
+<script>//change v3 to an integer and adding it to v1
+		var total= v1 + parseInt(v3);
+		document.write(total);
+	</script></p>
+<p>7. Display the result of v1 + v3 using parseFloat( ) on v3 using document.write. 
+<script>//change v3 to a float number and add it to the integer v1
+		var total= v1 + parseFloat(v3);
+		document.write (total);
+	</script></p>
+<h3>Part III</h3>
+<p>For each of the following exercises create a function what will be activated by the button.  </p>
+<p>Enter a number for value1: 
+  <input type="text" name="value1" id="value1" />
+</p>
+<p>Enter a number for value 2: 
+  <input type="text" name="value2" id="value2" />
+</p>
+<p>8. 
+  <input type="button" value="Display value1" onclick="getValue1()"/> Display the value you entered for value1: 
+  <input type="text" name="displayValue1" id="displayValue1" />
+</p>
+<p>9. 
+  <input type="button" value="Display value2" onclick="getValue2()"/> Dislplay the value you entered for value2: 
+  <input type="text" name="displayValue2" id="displayValue2" />
+</p>
+<p>10. 
+  <input type="button" value="Multiply" onclick="multiply()"/> Display the value of value1 * value2: 
+  <input type="text" name="result3" id="result3" />
+</p>
+<p>11. 
+  <input type="button" value="Add" onclick="add()"/> Display the results of value1 + value2 in the following textfield. 
+  <input type="text" name="result1" id="result1" />
+</p>
+<p>12. 
+  <input type="button" value="Add parsed values" onclick="add2()"/> Display the results of value1 + value2 in the following textfield. Use parseInt( ) or parseFloat( ). 
+  <input type="text" name="result2" id="result2" />
+</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

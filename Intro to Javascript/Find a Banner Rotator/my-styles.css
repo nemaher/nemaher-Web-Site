@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/* CSS Document */
+body{
+	background-image:url(Images/space-waves-001482-gradient-dark-blue.jpg);
+}
+.orbit-container {
+	text-align: center;
+	padding: 40px 0;
+	margin-bottom: 10px;
+	
+}
+div.orbit-container
+{
+  height: 100%; /* Your own height */
+  width: 100%; /* Your own width */
+}
+ul.orbit-ul, li.orbit-item
+{
+  height: 500px;
+  width: 1000px; /* Your own height */
+}
+li.orbit-item-1
+{
+  background:url(Images/Earth.jpg) no-repeat center;
+  background-size: cover;
+}
+li.orbit-item-2
+{
+  background:url(Images/Mars.jpg) no-repeat center;
+  background-size: cover;
+}
+li.orbit-item-3
+{
+  background:url(Images/Pluto.jpg) no-repeat center;
+  background-size: cover;
+}

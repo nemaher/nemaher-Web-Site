@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV221 Intro Javascript - Loops Homework</title>
+<script>
+// problem #1
+function enterNames(){
+	var name = "";
+	var cnt = 0;
+	
+	while(name != "no"){
+		var name = prompt("Name of person:");
+		document.getElementById("names").innerHTML = ("<p>You entered:" + name + "</p>");
+		cnt++;
+		var name = prompt("Do you have any more names to enter? yes/no");
+	}
+	document.getElementById("names").innerHTML = ("<p>You entered " + cnt + " names. Thank you.</p>");
+}
+
+//problem #2
+function totalSales()
+{
+	var amount = "";
+	var total = 0;
+	while(amount != "done")
+	{
+		amount = prompt("Enter an amount. Type 'done' when finished.");
+		if(! isNaN(amount))
+		{
+		total += parseFloat(amount);	
+		}
+	}
+	alert(total);
+}
+
+</script>
+</head>
+
+<body>
+<h1>WDV221 Intro Javascript</h1>
+<h2>Project-5 Loops Homework</h2>
+<p>&nbsp;</p>
+<h3>Instructions:</h3>
+<p>1. Create a function enterNames( ). Create a button that will call the enterNames( ). The function will start a loop that will ask you for a name until you  tell the function that you do not have any more names.  The body of the loop will display each name  in the following  format:  &ldquo;You entered:  <em>name</em>&rdquo;.  It will keep a count of the number of names entered. After you display each name the loop will ask you if  you have more names to enter. If you enter &lsquo;yes&rsquo; the loop will continue. If you enter 'no' the loop will stop. Once the loop stops you should get a message that says how many names you entered. It should looking something like &quot;You entered ? names. Thank you&quot;. </p>
+<button type="button" onclick="enterNames()">Names</button>
+<p id="names"></p>
+<p><strong>Note</strong>: This type of loop is often used when asking the customer or user for input. Most of the time we do not know how many items the customer has to enter. For example: You need to order a number of products and the loop will ask you for the name, quantity and price for each product. It will keep asking you until you do not have any items left to enter. It will then end the loop and complete its processing. </p>
+<p>&nbsp;</p>
+<p>2. Create a function called totalSales( ). The function will use a loop to ask the  user to enter amounts until they enter the word &quot;done&quot;. The body of the loop will add the input amount to a variable called totalSales. When the loop ends the function should display the value of totalSales in an alert. </p>
+<p><strong>Note</strong>: This is called an accumulator loop. It is often used when gathering information such as prices for each product, quantities of products, continue shopping, etc.</p>
+<p>
+<button type="button" onclick="totalSales()">Total Sales</button>
+<br />
+</p>
+<p>3. Create a runtime script that will use a nested For loop  to create a table with 3 rows with 5 cells in each row. Place the same number  or a letter in each cell. <br />
+</p>
+<table>
+<script>
+for(var cnt = 1; cnt <= 3; cnt++)
+	{
+	document.write("<tr>");
+		for(var cn = 1; cn <= 5; cn++)
+		{
+		document.write("<td>!</td>");
+		}
+	document.write("</tr>");
+	}
+</script>
+</table>
+<p><strong>Note</strong>: Javascript is often used to create HTML elements as part of creating/loading a page. It is commonly used to populate drop down lists, lists and tables. <br />
+</p>
+</body>
+</html>

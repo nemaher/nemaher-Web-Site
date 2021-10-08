@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Assignment: Create formatEUDate( ) function</title>
+</head>
+
+<body>
+<h1>Assignment: Create formatEUDate( ) function</h1>
+<script>
+
+	var today = new Date();
+
+	function formatUSDate(inDate){
+		var day = inDate.getDate(); //gets current day
+		var month = inDate.getMonth() + 1; //gets the current month
+		var year = inDate.getFullYear(); //gets the current year
+		
+		var formatedDate = "<p>" + day + "/" + month + "/" + year + "</p>";
+		document.write(formatedDate);
+	}
+	
+	formatUSDate(today);
+	
+
+</script>
+</body>
+</html>

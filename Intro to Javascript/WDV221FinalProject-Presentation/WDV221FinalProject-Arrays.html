@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV221 Intro Javascript Array Handling</title>
+
+<style>
+
+/* This styles the menu div. */
+#menu{
+	font-size: 1.3em;
+	width: 1000px;
+	padding: 20px;
+	margin: 0 auto; 
+	background-color: #fff;
+	position: relative; 
+}
+
+
+/* The following styles the unordered lists and list items */
+#navbar {
+	margin: 0;
+	padding: 0;
+	height: 1em;
+}
+ 
+#navbar li {
+	list-style: none;	/* removes the bullets */
+	float: left;
+	width: 225px;
+}
+ 
+#navbar li a {
+	display: block;		/* Makes the element displayable as a block element.  */
+	padding: 3px 8px;
+	background-color: #5e8ce9;
+	color: #fff;
+	text-decoration: none; 
+}
+ 
+#navbar li ul {
+	display: none; 		/* Hides the element from the browswer.  Turns it 'off'  */
+	width: 10em; /* Opera fix*/
+	background-color: #69f;
+}
+ 
+ 
+/* The following styles the submenus.  This happens when the mouse hovers over the top list item. */
+#navbar li:hover ul, #navbar li.hover ul {
+	display: block;		/* Displays the element.  Turns it 'on' */
+	position: absolute; /* Places it and displays it at the point it was created in the html  */
+	margin: 0;
+	padding: 0; 
+}
+ 
+#navbar li:hover li, #navbar li.hover li {
+	float: none; 
+}
+ 
+#navbar li:hover li a, #navbar li.hover li a {
+	background-color: #69f;
+	border-bottom: 1px solid #fff;
+	color: #000; 
+}
+ 
+#navbar li li a:hover {
+	background-color: #8db3ff; 
+}
+
+</style>
+
+<script>
+
+var productNames = ["shoes", "socks", "sandals", "shorts", "shirts"];
+
+var productSales = [170.50, 110.25, 3130.75, 125.50, 80];
+
+function addSales(){
+	var sales = 0.0;
+	for(var i = 0; i < productSales.length; i++){
+		sales += productSales[i]; 
+	}
+	document.getElementById("results").innerHTML = sales;
+}
+
+function productLookUp(){
+	var product = document.getElementById("textfield9").value;
+	
+	for (var i = 0; i < productNames.length; i++){
+		if (product == productNames[i]){		
+			document.getElementById("textfield10").value = currency(productSales[i]);
+			break;
+		}else{
+			document.getElementById("textfield10").value = "Product Not Found";
+		}
+	}
+}
+
+function currency(Input) {
+   //Input=eval(Input)
+   WorkNum=Math.abs((Math.round(Input*100)/100))
+   Decimal=""+WorkNum
+   
+//alert( Decimal.indexOf(".") );
+
+   if (Decimal.indexOf(".")==-1)
+      {Decimal+=".00"}
+   
+   strDollar=Decimal.substr(0,Decimal.indexOf("."))
+   intDollar=strDollar-0
+
+   DecimalPos=Decimal.substr(Decimal.indexOf("."))
+   
+   while (DecimalPos.length<3)
+      {DecimalPos+="0"}
+
+   if (intDollar>=1000)
+      {
+      DollarLen=strDollar.length
+      strDollar=parseInt(""+(intDollar/1000))+","+strDollar.substring(DollarLen-3,DollarLen)
+      }
+
+   if (intDollar>=1000000)
+      {
+      DollarLen=strDollar.length
+      strDollar=parseInt(""+(intDollar/1000000))+","+strDollar.substring(DollarLen-7,DollarLen)
+      }
+
+   strCurrency = strDollar + DecimalPos 
+
+   if (Input<0) {strCurrency="("+strCurrency+")"}
+   
+   return "$"+strCurrency;
+}
+</script>
+
+</head>
+
+<body>
+<h1>WDV221 Intro Javascript</h1>
+<h2>Final Exam Project</h2>
+
+<div id="menu">
+		<ul id="navbar">
+			<li><a href="WDV221FinalProject-DateHandling.html">Date Handling</a></li>
+			<li><a href="WDV221FinalProject-MathOperators.html">Math Operations</a></li>
+			<li><a href="WDV221FinalProject-Arrays.html">Array Handling</a></li>
+			<li><a href="WDV221FinalProject-Presentation.html">Changing Presentation</a></li>
+		</ul>
+</div>  
+<!-- end menu -->
+
+<h3>Array Handling</h3>
+<p>Arrays are used to store data, process data and to lookup data. Arrays can be loaded in your javascript and can be dynamically updated with your javascript as your page is processed. Make all changes to this page. </p>
+<p>1. Create a array called  productNames. It will have the following values:  shoes, socks, sandals, shorts, shirts</p>
+<p>2. Create a parallel array called productSales. It will have the following values: 170.50, 110.25, 3130.75, 125.50, 80;</p>
+<p>3. 
+  <input type="button" name="button3" onclick="addSales()" id="button3" value="Display Total Sales" /> 
+Total Sales are: <em id="results">put results here!</em></p>
+<ul>
+  <li> The button will call a function</li>
+  <li>The function will use a loop to add the productSales together</li>
+  <li>Display Total Sales results in the area indicated above.</li>
+  <li>The display should be formatted as a dollar amount. </li>
+</ul>
+<p>4. Display Product sales form.</p>
+<p>Product: 
+  <label for="textfield9"></label>
+  <input type="text" name="textfield9" id="textfield9" />
+  <input type="button" name="button4" id="button4" value="Lookup Product" onclick="productLookUp()"/>
+</p>
+<p>Product Sales: 
+  <label for="textfield10"></label>
+  <input type="text" name="textfield10" id="textfield10" />
+</p>
+<ul>
+  <li>The button will take the requested product and display the corresponding Sales amount in the Product Sales field.</li>
+  <li>The Sales amount should be formatted as currency.</li>
+  <li>If an invalid product is entered display a  'Product Not Found' message next to the Product field.</li>
+</ul>
+<table width="63%" border="0">
+  <tr>
+    <td>
+      <p><strong>Rubric: Points for 1. and 2. </strong></p>
+      <ul>
+        <li>0 Not attempted.</li>
+        <li>3 Attempted but not correct.</li>
+        <li>5 Correctly written.</li>
+      </ul>
+      <p>&nbsp;</p></td>
+    <td>
+      <p><strong>Rubric: Points for 3. and 4.</strong></p>
+      <ul>
+        <li>0 Not attemped.</li>
+        <li>2 Displays something.</li>
+        <li>3 Displays correct values, but not formatted.</li>
+        <li>4  Displays correct values, properly formatted.</li>
+        <li>5 Works as expected with additional coding or effects.</li>
+    </ul>    </td>
+  </tr>
+</table>
+<p><strong>Extra Credit:</strong></p>
+<p>Allow the user to type in the desired information instead of hardcoding them in the script. This could either the products or the sales amounts or both.</p>
+<ul>
+  <li>1 Use the prompt to gather this information. </li>
+  <li>2 Allow for any number or type of products and/or sales amount.</li>
+  <li>3 Use a form to gather this information.</li>
+</ul>
+</body>
+</html>

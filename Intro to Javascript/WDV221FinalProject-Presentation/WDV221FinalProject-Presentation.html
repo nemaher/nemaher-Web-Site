@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV221 Intro Javascript Changing Presentation</title>
+
+<style>
+
+/* This styles the menu div. */
+#menu{
+	font-size: 1.3em;
+	width: 1000px;
+	padding: 20px;
+	margin: 0 auto; 
+	background-color: #fff;
+	position: relative; 
+}
+
+
+/* The following styles the unordered lists and list items */
+#navbar {
+	margin: 0;
+	padding: 0;
+	height: 1em;
+}
+ 
+#navbar li {
+	list-style: none;	/* removes the bullets */
+	float: left;
+	width: 225px;
+}
+ 
+#navbar li a {
+	display: block;		/* Makes the element displayable as a block element.  */
+	padding: 3px 8px;
+	background-color: #5e8ce9;
+	color: #fff;
+	text-decoration: none; 
+}
+ 
+#navbar li ul {
+	display: none; 		/* Hides the element from the browswer.  Turns it 'off'  */
+	width: 10em; /* Opera fix*/
+	background-color: #69f;
+}
+ 
+ 
+/* The following styles the submenus.  This happens when the mouse hovers over the top list item. */
+#navbar li:hover ul, #navbar li.hover ul {
+	display: block;		/* Displays the element.  Turns it 'on' */
+	position: absolute; /* Places it and displays it at the point it was created in the html  */
+	margin: 0;
+	padding: 0; 
+}
+ 
+#navbar li:hover li, #navbar li.hover li {
+	float: none; 
+}
+ 
+#navbar li:hover li a, #navbar li.hover li a {
+	background-color: #69f;
+	border-bottom: 1px solid #fff;
+	color: #000; 
+}
+ 
+#navbar li li a:hover {
+	background-color: #8db3ff; 
+}
+
+
+</style>
+<script>
+
+//question 1. changes the background color depending on what radio is slected
+function changeBackground(){
+	var radio = document.getElementById("radio");
+	if(radio.checked==true){
+		 document.getElementById("form2").style.background = "white";
+	}
+	
+	var radio2 = document.getElementById("radio2");
+	if(radio2.checked==true){
+		 document.getElementById("form2").style.background = "green";
+	}
+	
+	var radio3 = document.getElementById("radio3");
+	if(radio3.checked==true){
+		 document.getElementById("form2").style.background = "blue";
+	}
+}
+
+//resets question 1's background to white.
+function reset1(){
+	document.getElementById("form2").style.background = "white";
+}
+//question 2. This function takes in an id and will display that id depending on what parameter you give it
+//hides the sale picture due to the function at the bottom of the document
+function hideSale(id, hide){
+	document.getElementById(id).style.display = hide;
+}
+
+//changes the color of the sale line text
+//had to figure out how to add multiple functions to one event, just seperate the functions with a ;
+function saleColor(id, color){
+	document.getElementById(id).style.color = color;
+}
+
+//question 3. gets the font selected then sets the form to that font
+function getFont(){
+	var font = document.getElementById("select").value;
+	if (font == "Arial"){
+		document.getElementById("form3").style.fontFamily = "Arial";
+		document.getElementById("textfield").value = "Arial";
+	}else if (font == "Comic Sans MS"){
+		document.getElementById("form3").style.fontFamily = "Comic Sans MS";
+		document.getElementById("textfield").value = "Comic Sans MS";
+	}else if (font == "Courier"){
+		document.getElementById("form3").style.fontFamily = "Courier";
+		document.getElementById("textfield").value = "Courier";
+	}else if (font == "Times New Roman"){
+		document.getElementById("form3").style.fontFamily = "Times New Roman";
+		document.getElementById("textfield").value = "Times New Roman";
+	}
+}
+
+//resets question 3's text to Times New Roman
+function reset3(){
+	document.getElementById("form3").style.fontFamily = "Times New Roman";
+}
+</script>
+</head>
+
+<body>
+<h1>WDV221 Intro Javascript</h1>
+<h2>Final Exam Project</h2>
+
+<div id="menu">
+		<ul id="navbar">
+			<li><a href="WDV221FinalProject-DateHandling.html">Date Handling</a></li>
+			<li><a href="WDV221FinalProject-MathOperators.html">Math Operations</a></li>
+			<li><a href="WDV221FinalProject-Arrays.html">Array Handling</a></li>
+			<li><a href="WDV221FinalProject-Presentation.html">Changing Presentation</a></li>
+		</ul>
+</div>  
+<!-- end menu -->
+
+<h3>Changing Presentation</h3>
+<p>Javascript allows us to dynamically change the presentation of a web page as the viewer is watching. The style object from the document object can be accessed and updated with Javascript to make those changes. </p>
+<p>Please do all work on this page. </p>
+<form id="form2" name="form2" method="post" action="">
+  <p>
+    1. Select a new background color for this form.</p>
+  <p>
+    <input type="radio" name="radio" id="radio" value="radio" onclick="changeBackground()"/>
+    White </p>
+  <p>
+    <input type="radio" name="radio" id="radio2" value="radio2" onclick="changeBackground()"/>
+    Green </p>
+  <p>
+    <input type="radio" name="radio" id="radio3" value="radio3" onclick="changeBackground()"/>
+    Blue  </p>
+  <p>
+    <input type="reset" name="button5" id="button5" value="Reset" onclick="reset1()"/>
+  </p>
+  <ul>
+    <li>Correctly format the radio buttons to work as a group.</li>
+    <li>Use an event handler to call a function when a radio button is clicked or changed.</li>
+    <li>Change the background color of the form based upon the color selected.</li>
+    <li>Reset button returns the buttons to unchecked and the form to its original color.</li>
+  </ul>
+</form>
+<p><strong>Rubric: </strong></p>
+<ul>
+  <li>0	Not Attemped</li>
+  <li>2	Radio buttons formatted an working as radio buttons should.</li>
+  <li>3 A function is called that changes the form to the desired color or the Reset buttons works as described.</li>
+  <li>5	Both functions work as expexted.</li>
+</ul>
+<p>&nbsp;</p>
+<p>2. Create one or more javascript scripts to display sale information.</p>
+<h2 id="saleLine" onmouseover="hideSale('saleImg', 'block');saleColor('saleLine', 'red')" onmouseout="hideSale('saleImg', 'none');saleColor('saleLine', 'black')">Get your  Sale discount!</h2>  
+<!-- This is the Sale Line -->
+<p><img src="sale.jpg" width="217" height="121" id="saleImg" /></p>
+<ul>
+  <li>The sale image should not be part of the page when the page loads. </li>
+  <li>When you mouseover the Sale line display the sale image.</li>
+  <li>When you mouseover the Sale line change its text color to red.</li>
+  <li>When your mouse leaves the Sale line the sale image should be removed from the page.</li>
+  <li>When your mouse leaves the Sale line the color should return to its original color.</li>
+</ul>
+<p><strong>Rubric: </strong></p>
+<ul>
+  <li>0	Not Attemped</li>
+  <li>2 The sale image is properly removed from the page when the page is loaded.</li>
+  <li>3 The image displays or the text turns red on mouseover of the Sale line.</li>
+  <li>4 The image displays and the text turns red on mouseover of the Sale line.</li>
+  <li>5	When the mouse leaves the Sale line it correctly returns the affected content to its original presentation.</li>
+</ul>
+<p>&nbsp;</p>
+<form id="form3" name="form3" method="post" action="">
+  <p>
+    <label for="select"></label>
+  3. Change the font of the form to the selected font:</p>
+  <p>
+    <select name="select" id="select" onchange="getFont()">
+      <option>Select a Font</option>
+      <option value="Arial">Arial</option>
+      <option value="Comic Sans MS">Comic Sans MS</option>
+      <option value="Courier">Courier</option>
+      <option value="Times New Roman">Times New Roman</option>
+    </select>
+  </p>
+  <p>New Font: 
+    <label for="textfield" ></label>
+    <input type="text" name="textfield" id="textfield" />
+  </p>
+  <p>
+    <input type="reset" name="button6" id="button6" value="Reset" onclick="reset3()"/>
+  </p>
+  <ul>
+    <li>Use an event handler to call a function when the drop down is selected or changes</li>
+    <li>The function will display the selected font in the text field.</li>
+    <li>The function will change the font of this form to the selected choice.</li>
+    <li>The Reset button will return the form to its original presentation.</li>
+  </ul>
+</form>
+<p><strong>Rubric:</strong></p>
+<ul>
+  <li>0	Not Attemped</li>
+  <li>2	A function is called when a value is selected and runs without an error. </li>
+  <li>3 The selected font is displayed in the New Font text field.</li>
+  <li>4	The function correctly changes the font on the form based upon the color.</li>
+  <li>5 The font is correctly changed and the Reset returns the form to its original presentation.</li>
+</ul>
+</body>
+<script>
+hideSale("saleImg", "none");// this runs my hide sale function
+						   // originally had this at the top of the page but would send an error
+						   //This is because it could not set display as none until the img had been loaded in the DOM
+</script>
+</html>

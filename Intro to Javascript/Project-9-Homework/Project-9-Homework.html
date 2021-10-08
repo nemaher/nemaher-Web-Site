@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script>
+
+function headerStyle(id, alignment, color, background)//problem 1
+{
+	document.getElementById(id).style.textAlign = alignment; //set alignment of header
+	document.getElementById(id).style.color = color; //set text color of header
+	document.getElementById(id).style.backgroundColor = background; //set background color of header
+}
+
+function fontSize(id)// problem 2
+{
+	var size = prompt("Enter a font size between 10 and 50");
+	parseInt(size); //turns string into number
+	if (size > 9 && size < 51){ //verifys its within desired range
+		document.getElementById(id).style.fontSize = size + "px"; //units defined in pixels 
+	}else{
+		alert("Incorrect size choice");	
+	}
+ }
+
+function setBGcolor(id,BGcolor)//problem 3
+{
+	document.getElementById(id).style.backgroundColor = BGcolor; //uses id and color given to change the parigraph
+}
+	
+function timeGreeting()//problem 4
+{
+	var time = new Date();
+	if(time.getHours() < 11) // if its before 11 am the top will display the following
+	{
+		document.getElementById("greeting").style.color = "orange";
+		document.getElementById("greeting").style.fontSize = "30px";
+		document.getElementById("greeting").style.fontFamily = "Impact, Charcoal, sans-serif";
+		document.getElementById("greeting").style.backgroundColor = "yellow";
+		return "Good Morning!";
+	}else if (time.getHours() < 18){ // if its before 6 pm the top will display the following
+		document.getElementById("greeting").style.color = "white";
+		document.getElementById("greeting").style.fontSize = "40px";
+		document.getElementById("greeting").style.fontFamily = "Comic Sans MS, cursive, sans-serif";
+		document.getElementById("greeting").style.backgroundColor = "blue";
+		return "Good Afternoon!";
+	}else{ // if it is after 6 pm the top will display the following untill 12 am
+		document.getElementById("greeting").style.color = "blue";
+		document.getElementById("greeting").style.fontSize = "20px";
+		document.getElementById("greeting").style.fontFamily = "Lucida Sans Unicode, Lucida Grande, sans-serif";
+		document.getElementById("greeting").style.backgroundColor = "black";
+		return "Good Evening!";	
+	}
+}
+
+function color()//problem 5
+{
+	var color = prompt("Chose one of the following colors: blue, green, yellow, orange");
+	if (color === "blue")
+	{
+		document.getElementById("blue").style.color = "blue";
+	}else if (color == "green"){
+		document.getElementById("green").style.color = "green";	
+	}else if (color == "yellow"){
+		document.getElementById("yellow").style.color = "yellow";
+	}else if (color == "orange"){
+		document.getElementById("orange").style.color = "orange";
+	}else{ //all will change red if incorect color is chosen
+		document.getElementById("blue").style.color = "red";
+		document.getElementById("green").style.color = "red";
+		document.getElementById("yellow").style.color = "red";
+		document.getElementById("orange").style.color = "red";
+	}
+}
+</script>
+</head>
+
+<body>
+<h1>WDV221 Intro Javascript</h1>
+<h2 id="header" onmouseover="headerStyle('header', 'center', 'lime', 'skyblue')" onmouseout="headerStyle('header', 'left', 'black', 'white')">Style Object - CSS Interactions - Homework</h2>
+<h3 id="greeting">
+<script>
+	document.write(timeGreeting());
+</script>
+</h3>
+<p>Please make the following effects to this page. Please activate the funcion with a button unless otherwise indicated. When complete post this page to your server and update your homework page.</p>
+<p>1. Create a function that will center the heading &quot;Style Object - CSS Interactions&quot; when you mouseover it. The function should also change the font color and background color. Return it to its original state when the mouse leaves the heading. </p>
+<p id="p2">2. Create a function that will ask the user for a font size. If the font size is greater than 50 or less than 10 display an alert with the following message &quot;Incorrect size choice&quot;.  If it is a valid font size change the font of this paragraph to the requested size. </p>
+<input name="Font Size" type="button" value="Font Size" onclick="fontSize('p2')"/> 
+<p id="p3">3. Create a generic function that will change the background color of this paragraph. The following buttons will call the same function and pass in the requested color. </p>
+<p>
+  <input name="Blue" type="button" value="Blue" onclick="setBGcolor('p3', 'Blue')"/> 
+  <input name="Teal" type="button" value="Teal" onclick="setBGcolor('p3', 'Teal')"/> 
+  <input name="Lime Green" type="button" value="Lime Green" onclick="setBGcolor('p3', 'lime')"/>
+</p>
+<p>4. Create a function called timeGreeting( ). This function will change the &quot;Greeting&quot; based upon the time of day: morning, afternoon, evening. Change the font face, color, size and background to corresponding to the time of day. </p>
+<p>5. Create a function that will ask the user for one of the following colors: blue, green, yellow, orange. If the user enters an invalid color display a message and change the color of all the following paragraphs to red. Otherwise change the color of the indicated paragraph using the same generic function for each paragraph. Example: User enters green then change the green paragraph to green text, etc.</p>
+<input name="color" type="button" value="Chose a color" onclick="color()"/>
+<p>This is <span id="blue">blue</span>!</p>
+<p>This is <span id="green">green</span>!</p>
+<p>This is <span id="yellow">yellow</span>!</p>
+<p>This is <span id="orange">orange</span>!</p>
+<p><strong>Extra credit:</strong> In 5. Instead of changing the whole paragraph only change the color name. Example: When blue change only the word blue in the paragraph.</p>
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV221 Intro Javascript - Variables and Data Types In Class Exercises</title>
+
+<style>
+
+body {background-color:#FC6;
+}
+
+.highlightTitle	{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-style:italic;
+	font-size:14px;
+	text-decoration:underline;
+	color:#096;
+}
+
+
+</style>
+<script>
+var yourName="Nicholas Maher"; //assigns yourName to a string value of my name
+var numberSold=37; //assigns numberSold to a numaric value of 37
+var totalSales=123.45; //assigns numberSold to a numaric value of 123.45
+var goodMonth=true; // assigns goodMonth to a boolean value of true
+var annualSales; // declared a variable of annualSales
+
+function displayNames()
+{
+	var friendsName = "Connor"; //local variable
+	window.alert (yourName); //global variable
+	window.alert (friendsName);
+}
+function displayFriendsName()
+{
+	window.alert (friendsName);
+}
+function getName()
+{
+	var inName = window.prompt("Please enter your name.");
+	window.alert (inName);
+}
+</script>
+</head>
+
+<body>
+<h2>WDV221 Intro Javascript</h2>
+<h3>Variables and Data Types - In Class Exercises</h3>
+<hr />
+<p>Please complete the following exercises on this page. When complete post the page to your WDV221 folder on the server. Make a link in your WDV221 Intro Javascript page for this assignment. Contact your instructor and demonstrate that you have completed the assignment. </p>
+<p>Using Blackboard complete the In Class Exercise Assignment. Download your Homework project and being working on it with your remaining time. </p>
+<h3>For each exercise use a comment line to put the Exercise number within the script. Also place a short description of what the script is doing.</h3>
+<hr />
+<h3>Part I</h3>
+<p>Create a runtime script on this page. Define the following variables in that script. What is the scope of all these variables?</p>
+<p>1.	Define a String variable call yourName. Put your name in the variable.</p>
+
+<p>2. Define a Numeric variable called numberSold with a value of 37.</p>
+
+<p>3. Define a Numeric variable called totalSales with a value of 123.45.</p>
+
+<p>4. Define a variable called goodMonth. Assign it a boolean value of true.</p>
+
+<p>5 Define a variable called annualSales. Do not assign it a value.</p>
+
+<h3>Part II</h3>
+<p>Create a new script element below this paragraph. In that runtime script output each of the variables using the document.write( ). Each output should be within its own &lt;p&gt; element. Show the exercise number with each output. Your output should look something like this:</p>
+<p>42. The variable dogName contains: Spot</p>
+<script>
+document.write("<p>" + "1. The variable yourName contains: "+ yourName + "</p>");
+document.write("<p>"+ "2. The variable numberSold contains: "+numberSold+"</p>");
+document.write("<p>"+ "3. The variable totalSales contains: "+totalSales+"</p>");
+document.write("<p>"+ "4. The variable goodMonth contains: "+goodMonth+"</p>");
+document.write("<p>"+ "5. The variable annualSales contains: "+annualSales+"</p>");
+</script>
+<h3>Part III</h3>
+<p>6. Create a function called displayNames( ). Define a String variable called friendsName. Put one of your friend's name in the variable. The function should use an alert to display the variable yourName from 1. above. It should then display friendsName within an alert. Note: What is the scope of the friendsName variable?</p>
+<script>
+	displayNames();
+</script>
+<p>7. Use a button with an onclick event to call the displayNames( ) function. </p>
+<input type="button" value="Display Names" onClick="displayNames();"/>
+<p>8. Create a function called displayFriendsName( ). It should use an alert to display the friendsName variable. Will it work correctly? Why or Why not? Note: DO NOT put that variable in this function. </p>
+<script>
+displayFriendsName()
+//This function does not display friendsName because friendsName is a local variable to the function displayNames()
+</script>
+<h3>Part IV</h3>
+<p>9. Create a function called getName( ). Define a variable called inName within the function. Code a prompt within the function that will ask the user for a name. Store the name from the prompt in the inName variable. Use an alert( ) to display the name that was entered. Create a button and use an onclick event to run this function. </p>
+<input type="button" value="Name" onClick="getName();"/>
+</body>
+</html>

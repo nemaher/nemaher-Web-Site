@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Foundation Banner Rotator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="foundation-5/css/normalize.css" rel="stylesheet" media="screen">
+    <link href="foundation-5/css/foundation.css" rel="stylesheet" media="screen">
+    <link href="foundation-5/css/foundation-icons.css" rel="stylesheet" media="screen">
+    <link href="my-styles.css" rel="stylesheet" media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<!-- Banner Rotator -->
+<div class="row">
+    <div class="large-12 columns">
+            <ul data-orbit data-options="pause_on_hover:false; timer_speed:4000">
+            <li class="orbit-item orbit-item-1"><div class="cursive hidden-for-small"></div></li>
+            <li class="orbit-item orbit-item-2"><div> </div></li>
+            <li class="orbit-item orbit-item-3"><div> </div></li>
+        </ul>
+    </div>
+</div>
+
+
+
+<script src="foundation-5/js/vendor/jquery.js"></script>
+    <script src="foundation-5/js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script> 
+</body>
+</html>

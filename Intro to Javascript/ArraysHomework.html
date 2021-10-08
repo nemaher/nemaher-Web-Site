@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV221 Intro Javascript - Project-6 Arrays Homework</title>
+
+<script>
+
+var teams = new Array("Dragons","Pirates","Bears");
+var scores = new Array(0,0,0);
+
+function updateScores(){
+	var team = "undefined";
+	team = document.getElementById("textfield").value;
+	
+	for(var i=0; i<teams.length; i++)
+	{
+		if(team == teams[i])
+		{
+			scores[i] += parseInt(document.getElementById("textfield2").value);
+			document.getElementById("textfield3").value = scores[i];
+		}
+	}
+}
+</script>
+
+
+
+
+</head>
+
+<body>
+<h2>WDV221 Intro Javascript</h2>
+<h3>Project-6 Arrays - Homework</h3>
+<hr />
+<p>Please complete the following exercises on this page. When complete post the   page to your WDV221 folder on the server. Make a link in your WDV221 Intro   Javascript page for this assignment. Contact your instructor and demonstrate   that you have completed the assignment. </p>
+<p>Using Blackboard complete the In Class Exercise Assignment. Download your   Homework project and being working on it with your remaining time. </p>
+<h3>For each exercise use a comment line to put the Exercise number within the   script. Also place a short description of what the script is doing.</h3>
+<hr />
+<p>Use the team and scores arrays from the In Class Exercises to begin with. </p>
+<p>Create a function called updateScores( ). It will take the name and the score from the form below. It will look through the team array to find the requested team. When it finds the team it will add the Score value to the scores array that corresponds to the requested team. It will then display the new score from the array. </p>
+<p>If the requested team is not in the array it will display a message next to the Team name texfield &quot;Sorry, this team is not in your list of team names&quot;. HINT: Use the .innerHTML property of the span element located on the form.</p>
+<form id="form1" name="form1" method="post" action="">
+  <fieldset>
+  <legend>Update Team Scores</legend>
+  <table width="24%" border="0">
+    <tr>
+      <td width="39%">Team Name:</td>
+      <td width="61%"><input type="text" name="textfield" id="textfield" /></td>
+    </tr>
+    <tr>
+      <td>Score:</td>
+      <td><input type="text" name="textfield2" id="textfield2" /></td>
+    </tr>
+    <tr>
+      <td>New Total Score:</td>
+      <td><input type="text" name="textfield3" id="textfield3" /></td>
+    </tr>
+  </table>
+  <p>
+    <input type="button" name="button" id="button" value="Update Score" onclick="updateScores()" />
+    <input type="reset" name="button2" id="button2" value="Clear" />
+  </p>
+</fieldset>
+</form>
+<p><strong>Hint</strong>:	I would create a display function or use one from the In class exericses that will display the values of the team and scores arrays. Then you can see what is actually in your arrays as you work. </p>
+<p><strong>Extra Credit:</strong> If the team name is not in the array. The function will add the name to the team array and the score to the scores array. It will then display the new team and its score. </p>
+
+</body>
+</html>

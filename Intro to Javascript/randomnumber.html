@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Random Number</title>
+<script>
+function rando()
+	{
+		var randomNum = Math.floor((Math.random()*10)+1);//13-15 creats a random number
+		//can also use Math.round()
+		alert(randomNum);
+	}
+</script>
+</head>
+
+<body>
+<p>
+  <input type="button" name="button" id="button" value="Random Number" onclick="rando()"/>
+</p> 
+</body>
+</html>

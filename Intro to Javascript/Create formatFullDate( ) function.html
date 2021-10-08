@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Assignment: Create formatFullDate( ) function</title>
+</head>
+
+<body>
+<h1>Assignment: Create formatFullDate( ) function</h1>
+<script>
+
+	var today = new Date();
+
+	var days = new Array("Sunday","Monday","Tuesday","Wednesday", "Thursday", "Friday","Saterday")
+	var months = new Array("January","Febuary", "March", "April", "May", "June", "July", "Augest", "September", "October", "November", "December");
+
+	function formatUSDate(inDate){
+		
+		var day = inDate.getDay(); //gets current day of the week
+		var date = inDate.getDate(); //gets current day
+		var month = inDate.getMonth() + 1; //gets the current month
+		var year = inDate.getFullYear(); //gets the current year
+		
+		var formatedDate = "<p>" + days[inDate.getDay()] + " " + months[inDate.getMonth()] + " " + date + ", " + year + "</p>";
+		document.write(formatedDate);
+	}
+	
+	formatUSDate(today);
+	
+
+</script>
+</body>
+</html>

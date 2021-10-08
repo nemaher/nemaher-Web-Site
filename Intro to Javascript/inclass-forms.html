@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+
+<script>
+
+function setTextBox()
+{
+	document.getElementById("textBox").value = "Please enter a value";
+}
+
+function displayTextBox()
+{
+	var text = document.getElementById("textBox").value;
+	alert(text);	
+}
+
+function setTextArea()
+{
+	document.getElementById("textArea").value = "This is where I type my comments.";	
+}
+
+function displayTextArea()
+{
+	var text = document.getElementById("textArea").value;
+	alert(text);	
+}
+
+function setRadio(){
+	document.getElementById("Radio2").checked=true;
+}
+
+function displayRadio(){
+	var Radio1=document.getElementById("Radio");
+	var Radio2=document.getElementById("Radio2");
+	var Radio3=document.getElementById("Radio3");
+	alert("Radio 1 button status: " + Radio1.checked + "\n" + "Radio 2 button status: " + Radio2.checked + "\n" + "Radio 3 button status: " + Radio3.checked);
+	if(Radio1.checked==true){
+		alert(Radio1.value);
+	}
+	else{
+		if(Radio2.checked==true){
+			alert(Radio2.value);
+		}
+		else{
+			if(Radio3.checked==true){
+				alert(Radio3.value);
+			}
+		}
+	}
+}
+
+function setCheckbox(){
+	var box1 = document.getElementById("checkbox");
+	var box2 = document.getElementById("checkbox2");
+	box1.checked=true;
+	box2.checked=true;
+}
+
+function displayCheckbox(){
+	var box1= document.getElementById("checkbox");
+	var box2= document.getElementById("checkbox2");
+	alert("checkbox 1 status: " + box1.checked + "\n"  + "checkbox 2 status: " + box2.checked); 
+	if((box1.checked==true) && (box2.checked==true)){
+		alert(box1.value + " " + box2.value);
+	}
+	else{
+		if(box1.checked==true){
+			alert(box1.value);
+		}
+		else{
+			if(box2.checked==true){
+				alert(box2.value);
+			}
+		}
+	}
+}
+
+function setDropDown(){
+	var select1= document.getElementById("select");
+	select1.selectedIndex=1;
+}
+
+function displayDropDown(){
+	var select1= document.getElementById("select");
+	alert("The selectedIndex is: " + select1.selectedIndex);
+	alert("The selected value: " + select1.options[select1.selectedIndex].value);
+	alert("The selected text: " + select1.options[select1.selectedIndex].text);
+}
+
+function setFile(){
+	document.getElementById("fileField").value=" ";
+}
+
+function displayFile(){
+	alert("File value: " + document.getElementById("fileField").value);
+}
+
+function setHidden(){
+	document.getElementById("hiddenField").value="You can't see me!";
+}
+
+function displayHidden(){
+	alert("Hidden value: " + document.getElementById("hiddenField").value);
+}
+
+</script>
+</head>
+
+<body>
+
+<form>
+<table width="500" border="1">
+	<tr>
+    	<td>Text Box</td>
+        <td><input type="text" name="textBox" id="textBox"></td>
+    	<td><input type="button" value="Set Text Box" onclick="setTextBox()"/><br />
+            <input type="button" value="Display Text Box" onclick="displayTextBox()"/>
+        </td>
+    </tr>
+    <tr>
+        <td>Text Area</td>
+        <td><textarea name="textArea" id="textArea" cols="30" rows="5"></textarea></td>
+        <td><input type="button" value="Set Text Area" onclick="setTextArea()"/><br />
+            <input type="button" value="Display Text Area" onclick="displayTextArea()"/>
+        </td>
+    </tr>
+    <tr>
+    	<td>Radio Buttons</td>
+    	<td> 
+            <input type="radio" name="RadioGroup1" value="Radio1" id="Radio" />
+            <label>Radio 1</label>
+          <br />
+            <input type="radio" name="RadioGroup1" value="Radio2" id="Radio2" />
+            <label>Radio 2</label>
+          <br />
+            <input type="radio" name="RadioGroup1" value="Radio3" id="Radio3" />
+            <label>Radio 3</label>
+          <br />
+        </td>
+        
+        <td>
+        	<input type="button" value="Set Radio" onclick="setRadio()" />
+        <br />
+            <input type="button" value="Display Radio" onclick="displayRadio()" />           
+        </td>
+    </tr>
+    <tr>
+    	<td>Checkbox</td>
+    	<td>
+            <p>
+            <label><input type="checkbox" name="CheckboxGroup1" value="checkbox" id="checkbox" />
+            Checkbox</label>
+            </p>
+            <p>
+            <label><input type="checkbox" name="CheckboxGroup1" value="checkbox2" id="checkbox2" />
+            Checkbox 2</label>
+            </p>
+  	    </td>
+    	<td>
+    		<input type="button" value="Set Checkbox" onclick="setCheckbox()" />
+        	<br />
+    		<input type="button" value="Display Checkbox" onclick="displayCheckbox()" />
+   		</td>
+    </tr>
+    
+    <tr>
+    <td>Drop Down</td>
+    <td>  
+      <p>
+        <select name="select" id="select">
+      	<option value="B">Burger</option>
+      	<option value="HD">Hot Dog</option>
+      	<option value="P">Pizza</option>
+        </select>
+      </p>
+    </td>
+    <td>
+    	<p>
+        <input type="button" value="Set Selected" onclick="setDropDown()" />
+        <br />
+    	<input type="button" value="Display Selected" onclick="displayDropDown()" />
+  		</p>
+    </td>
+    </tr>
+    
+    <tr>
+    	<td>File Field</td>
+      	<td>
+            <p>
+            <label for="fileField">Search</label>
+            <input type="file" name="fileField" id="fileField" />
+            </p>
+      	</td>
+     	<td>
+            <p>
+            <input type="button" value="Set File" onclick="setFile()" />
+            <br />
+            <input type="button" value="Display File" onclick="displayFile()" />
+            </p>
+      	</td>
+    </tr>
+    
+    <tr>
+    	<td>Hidden Field</td>
+        <td>
+        	<p>
+    		<input type="hidden" name="hiddenField" id="hiddenField" />
+    		<label for="checkbox">hidden</label>
+  			</p>
+        </td>
+    	<td>
+        	<p>
+            <input type="button" value="Set Hidden" onclick="setHidden()" />
+            <br />
+    		<input type="button" value="Display Hidden" onclick="displayHidden()" />
+  			</p>
+        </td>
+    </tr>
+    
+    <tr>
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Reset" />    
+    </tr>
+</table>
+</form>
+
+</body>
+</html>

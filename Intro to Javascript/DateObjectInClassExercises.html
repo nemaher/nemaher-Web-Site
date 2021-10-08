@@ -1,0 +1,119 @@
+4<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV221 Intro Javascript - Date Object In Class Exercises</title>
+</head>
+
+<body>
+<h1>WDV221 Intro Javascript</h1>
+<h3>Javascript Date Object - In Class Exercises</h3>
+<hr />
+<p>Please complete the following exercises on this page. When complete post the   page to your WDV221 folder on the server. Make a link in your WDV221 Intro   Javascript page for this assignment. Contact your instructor and demonstrate   that you have completed the assignment. </p>
+<p>Using Blackboard complete the In Class Exercise Assignment. Download your   Homework project and being working on it with your remaining time. </p>
+<h3>For each exercise use a comment line to put the Exercise number within the   script. Also place a short description of what the script is doing.</h3>
+<hr />
+<p>Use a runtime script and document.write( ) to output the requested results.</p>
+<p>Create and display a new Date object called today with today's date. <strong>Today is:</strong> (put the value of the today variable here)</p>
+<script>
+
+	var today = new Date(); //sets global variable seting today as the current date
+	document.write(today); // writes the variable today to the screen
+
+</script>
+<p>Create and dispaly a new Date object called yesterday, with yesterday's date. <strong>Yesterday is:</strong> (put the value of the yestertoday variable here)</p>
+<script>
+
+	var yesterday = new Date(); //sets the variable yesterday to todays date
+	yesterday.setDate(yesterday.getDate() - 1); //subtracts 1 from todays date
+	document.write(yesterday);
+
+</script>
+<p>Create and display a new Date object called tomorrow, with tomorrow's date. <strong>Tomorrow is:</strong> (put the value of the tomorrow variable here)</p>
+<script>
+
+	var tomorrow = new Date(); //sets the variable tomorrow to todays date
+	tomorrow.setDate(tomorrow.getDate() + 1); //adds 1 to todays date
+	document.write(tomorrow);
+
+</script>
+<p>Create and display a new Date object called oneWeek with the date one week from today. <strong>One week from today is:</strong> (put the value of the oneWeek variable here)</p>
+<script>
+
+	var oneWeek = new Date(); //sets the variable oneWeek to todays date
+	oneWeek.setDate(oneWeek.getDate() + 7); //adds 7 to todays date
+	document.write(oneWeek);
+
+</script>
+<p>Create and dispaly a new Date object called tenDays with the date 10 days from today. <strong>10 Days from today is:</strong> (put the value of the tenDays variable here)</p>
+<script>
+
+	var tenDays = new Date(); //sets the variable tenDays to todays date
+	tenDays.setDate(tenDays.getDate() + 10); //adds 10 to todays date
+	document.write(tenDays);
+	
+</script>
+<p>The current day is:</p>
+<script>
+
+	document.write(today.getDate()); // writes todays day to the screen using the today variable
+
+</script>
+<p>The current day of the week is:</p>
+<script>
+
+	var days = new Array("Sunday","Monday","Tuesday","Wednesday", "Thursday", "Friday","Saterday")
+	//an array of all the days in the week
+	document.write(today.getDay() + " - "); //writes the the day as an integer
+	document.write(days[today.getDay()]); //finds the day in the array and writes it as a string.
+
+</script>
+<p>The current month is:</p>
+<script>
+
+	var months = new Array("January","Febuary", "March", "April", "May", "June", "July", "Augest", "September", "October", "November", "December");
+	document.write(today.getMonth() + " - "); //integer value of the month
+	document.write(months[today.getMonth()]); //We created an array to give the string version of the day
+
+</script>
+<p>The current year is: </p>
+<script>
+
+	document.write(today.getFullYear()); //writes the current year to the screen
+
+</script>
+<p>Format today's date into mm/dd/yyyy and display: 	(Hint: get the individual pieces from the date object and concatenate them together with the slashes)</p>
+<script>
+
+	var day = today.getDate(); //gets todays day
+	var month = today.getMonth() + 1; //gets the current month
+	var year = today.getFullYear(); //gets the current year
+	
+	//formats into dd/mm/yyyy
+	var formatedDate = day + "/" + month + "/" + year;
+	document.write(formatedDate);
+
+</script>
+<p>Format today's date into dd/mm/yyyy and display: (Hint: get the individual pieces from the date object and concatenate them together with the slashes)</p>
+<script>
+
+	var day = today.getDate(); //gets todays day
+	var month = today.getMonth() + 1; //gets the current month
+	var year = today.getFullYear(); //gets the current year
+	
+	//formats into mm/dd/yyyy
+	var formatedDate = month + "/" + day + "/" + year;
+	document.write(formatedDate);
+
+
+</script>
+<h3>Special Date!</h3>
+<p>Page last modified:	(display the date that this page was last changed)	(Hint: Not part of the Date object)</p>
+<script>
+
+	var modified = new Date(document.lastModified); //gets when the page was last modified from the DOM
+	document.write(modified);
+
+</script>
+</body>
+</html>

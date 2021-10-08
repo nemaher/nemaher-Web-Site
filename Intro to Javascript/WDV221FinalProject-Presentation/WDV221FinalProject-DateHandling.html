@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV221 Intro Javascript  Final Project - Date Handling</title>
+
+<style>
+
+/* This styles the menu div. */
+#menu{
+	font-size: 1.3em;
+	width: 1000px;
+	padding: 20px;
+	margin: 0 auto; 
+	background-color: #fff;
+	position: relative; 
+}
+
+
+/* The following styles the unordered lists and list items */
+#navbar {
+	margin: 0;
+	padding: 0;
+	height: 1em;
+}
+ 
+#navbar li {
+	list-style: none;	/* removes the bullets */
+	float: left;
+	width: 225px;
+}
+ 
+#navbar li a {
+	display: block;		/* Makes the element displayable as a block element.  */
+	padding: 3px 8px;
+	background-color: #5e8ce9;
+	color: #fff;
+	text-decoration: none; 
+}
+ 
+#navbar li ul {
+	display: none; 		/* Hides the element from the browswer.  Turns it 'off'  */
+	width: 10em; /* Opera fix*/
+	background-color: #69f;
+}
+ 
+ 
+/* The following styles the submenus.  This happens when the mouse hovers over the top list item. */
+#navbar li:hover ul, #navbar li.hover ul {
+	display: block;		/* Displays the element.  Turns it 'on' */
+	position: absolute; /* Places it and displays it at the point it was created in the html  */
+	margin: 0;
+	padding: 0; 
+}
+ 
+#navbar li:hover li, #navbar li.hover li {
+	float: none; 
+}
+ 
+#navbar li:hover li a, #navbar li.hover li a {
+	background-color: #69f;
+	border-bottom: 1px solid #fff;
+	color: #000; 
+}
+ 
+#navbar li li a:hover {
+	background-color: #8db3ff; 
+}
+
+
+</style>
+<script>
+
+	var today = new Date(); //sets global varible to get the date
+
+//formats todays date mm/dd/yy
+	function formatDate(){
+		var day = today.getDate(); //gets current day
+		var month = today.getMonth() + 1; //gets the current month
+		var year = today.getFullYear().toString().substr(2,2);//gets the current year
+		
+		var formatedDate = "<p>" + month + "/" + day + "/" + year + "</p>";
+		document.write(formatedDate);
+	}
+
+//formats todays date mm/dd/yyyy
+	function formatDate2(){
+		var day = today.getDate(); //gets current day
+		var month = today.getMonth() + 1; //gets the current month
+		var year = today.getFullYear(); //gets the current year
+		
+		var formatedDate = "<p>" + month + "/" + day + "/" + year + "</p>";
+		document.write(formatedDate);
+	}
+
+//sets global arrays for the days of the week and months of the year
+	var days = new Array("Sunday","Monday","Tuesday","Wednesday", "Thursday", "Friday","Saterday")
+	var months = new Array("January","Febuary", "March", "April", "May", "June", "July", "Augest", "September", "October", "November", "December");
+
+	function formatDate3(){
+		
+		var day = today.getDay(); //gets current day of the week
+		var date = today.getDate(); //gets current day
+		var month = today.getMonth() + 1; //gets the current month
+		var year = today.getFullYear(); //gets the current year
+		
+		var formatedDate = "<p>" + days[today.getDay()] + " " + months[today.getMonth()] + " " + date + ", " + year + "</p>";
+		document.write(formatedDate);
+	}
+
+//formats the date mm/dd/yyyy one month from now	
+	function formatDate4(){
+		var day = today.getDate(); //gets current day
+		if (today.getMonth() == 11) {
+    		var month = (today.getFullYear() + 1, 0, 1);
+			var year = (today.getFullYear() + 1);
+		} else {
+    		var month = (today.getFullYear(), today.getMonth() + 1, 1);
+			var year = today.getFullYear();} 
+		
+		var formatedDate = "<p>" + month + "/" + day + "/" + year + "</p>";
+		document.write(formatedDate);
+	}
+	
+	function dilivery(){
+		var day = today.getDay(); //gets current day of the week
+		var date = today.getDate(); //gets current day
+		var month = today.getMonth() + 1; //gets the current month
+		var year = today.getFullYear(); //gets the current year
+		
+		var formatedDate = "<p>" + days[today.getDay()] + " " + months[today.getMonth()] + " " + date + ", " + year + "</p>";
+		document.write(formatedDate);
+		document.getElementById("date").innerHTML = formatedDate;
+	}
+</script>
+</head>
+
+<body>
+
+<h1>WDV221 Intro Javascript</h1>
+<h2>Final Exam Project</h2>
+
+<div id="menu">
+		<ul id="navbar">
+			<li><a href="WDV221FinalProject-DateHandling.html">Date Handling</a></li>
+			<li><a href="WDV221FinalProject-MathOperators.html">Math Operations</a></li>
+			<li><a href="WDV221FinalProject-Arrays.html">Array Handling</a></li>
+			<li><a href="WDV221FinalProject-Presentation.html">Changing Presentation</a></li>
+		</ul>
+</div>  
+<!-- end menu -->
+
+<h3>Date Handling</h3>
+<p>One of the primary uses for Javascript is to process and display dates and times. We use the Javascript Date Object as the basis for a lot this processing. Make all changes to this page.</p>
+<p><strong>Please use javascript to complete the following displays </strong></p>
+<p>1. Display today's date as mm/dd/yy.</p>
+<script>formatDate()</script>
+<p>2. Display today's date as mm/dd/yyyy.</p>
+<script>formatDate2();</script>
+<p>3. Display today's date as Day Month date, Year. <em> Example:  Monday January 3, 2011</em></p>
+<script>formatDate3()</script>
+<p>4. Display the date one month from now as mm/dd/yyyy.  </p>
+<script>formatDate4()</script>
+<p>5. Display the expected delivery date based upon the selected delivery method:</p>
+<p>Select Delivery Method: 
+  <select name="deliveryType" id="deliveryType" onchange="dilivery()">
+    <option value="7">USPS Standard 7 days</option>
+    <option value="5">UPS Ground 5 days</option>
+    <option value="3">USPS Priority 3 days</option>
+    <option value="2">FedEx Rush 2 days</option>
+  </select>
+</p>
+<p>If you order today, your expected delivery date should be: <em id="date">put date here!</em></p>
+<ul>
+  <li>Format expected delivery date as Tuesday January 1, 2013</li>
+  <li>Use onchange or onclick event handler to process the effect</li>
+</ul>
+<p><strong>Rubric: Points for tasks 1-4.</strong></p>
+<p>0 Not attempted</p>
+<p>2 Attempted</p>
+<p>3 Displays a partially correct value</p>
+<p>4 Displays the correct value and format using functions that will work with any date.</p>
+<p>5 Display the correct value and format using functions with parameters that will work with any date.</p>
+<p><strong>Rubric: Points for task 5.</strong></p>
+<p>0 Not attempted</p>
+<p>2 Attempted</p>
+<p>3 Displays a correctly formatted delivery date</p>
+<p>5 Displays the correct date formatted as expected</p>
+<p>&nbsp;</p>
+<p><strong>Extra Credit:</strong></p>
+<p>1 point - Display this page's updated date: </p><script>var x = document.lastModified; document.write(x);</script>
+<p>&nbsp;</p>
+</body>
+</html>

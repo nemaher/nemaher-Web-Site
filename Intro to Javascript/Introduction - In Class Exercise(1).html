@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV221 Intro Javascript - Introduction to Javascript</title>
+
+<style>
+
+body {background-color:#FFCCCC;
+}
+
+.highlightTitle	{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-style:italic;
+	font-size:14px;
+	text-decoration:underline;
+	color:#096;
+}
+
+
+</style>
+<script>//function for problem 5 when the parigraph is clicked
+function what()
+{
+	document.write("<h3>What just happened?</h3>");
+}
+</script>
+</head>
+
+<body>
+
+<h2>WDV221 Intro Javascript</h2>
+<h3>Introduction to Javascript - In Class Exercises</h3>
+<hr />
+<p>Please complete the following exercises on this page. When complete post the page to your WDV221 folder on the server. Make a link in your WDV221 Intro Javascript page for this assignment. Contact your instructor and demonstrate that you have completed the assignment. </p>
+<p>Using Blackboard complete the In Class Exercise Assignment. Download your Homework project and being working on it with your remaining time. </p>
+<hr />
+<p>For each exercise use a comment line to put the Exercise number within the script. Also place a short description of what the script is doing.</p>
+
+<p>1. Create a runtime script that will process an alert( ). The alert should display your name. </p>
+<script type="text/javascript">//an alert with my name
+alert("Nicholas Maher");
+</script>
+
+<p>2. Create a runtime script that will process a document.write( ). The script should write your name below as an H1 element. </p>
+<script type="text/javascript">//writes my name as an h1 tag
+
+document.write("<h1>Nicholas Maher</h1>");
+
+</script>
+
+<p>3. Create a runtime script that will process a document.write( ). The script should write a short description of what you have learned today below this line.  The content should be within a p element.</p>
+<script type="text/javascript">//writes what we did in class today
+document.write("<p>Today in class we learned how to code in JavaScript by writing alerts, writing to the page, and creating functions.</p>");
+</script>
+
+<p>4. Use the button element on this page. Use the onclick event to display the name of the course in an alert function when the button is clicked. </p>
+<!--a button that when clicked alerts you of what the corse is-->
+  <input type="button" value="Press Me" onClick="alert('Intro to JavaScrpit');"/>
+
+<p onclick="what()">5. Place an onclick event handler in this paragraph. When you click the paragraph use the document.write to output &lt;h3&gt;What just happened?&lt;/h3&gt;.</p>
+<p>
+<!--a button that takes you to a new window-->
+  <input type="button" name="button3" id="button3" value="Button" onClick="document.write('<h3>What just happened?</h3>');"/>
+</p>
+<p>&nbsp;</p>
+</body>
+</html>
