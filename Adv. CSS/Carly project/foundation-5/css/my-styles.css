@@ -1,0 +1,72 @@
+/* Layout
+================================ */
+body{
+	background-image:url(../../Images/little-squares-003239-light-blue%20copy.jpg);
+}
+.cursive{
+	font-family: 'Satisfy', cursive;
+	color: #A44D8D;
+	padding: 100px;
+	font-size: 4em;
+}
+.padding{
+	padding: 40px 5px;
+}
+.orbit-container {
+	text-align: center;
+	padding: 40px 0;
+	margin-bottom: 10px;
+	
+}
+div.orbit-container
+{
+  height: 100%; /* Your own height */
+  width: 100%; /* Your own width */
+}
+ul.orbit-ul, li.orbit-item
+{
+  height: 500px;
+  width: 1000px; /* Your own height */
+}
+li.orbit-item-1
+{
+  background:url(../../Images/carly.jpg) no-repeat center;
+  background-size: cover;
+}
+li.orbit-item-2
+{
+  background:url(../../Images/576376_332744983447497_95376810_n.jpg) no-repeat center;
+  background-size: cover;
+}
+li.orbit-item-3
+{
+  background:url(../../Images/pug.jpg) no-repeat center;
+  background-size: cover;
+}
+
+/* Icons
+================================ */
+
+[class*="fi-"] {
+  font-size: 3em;
+  text-align: center;
+  color: #2ba6cb;
+  display: block;
+}
+.social-icon{
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+}
+
+/* Media Queries
+================================ */
+
+@media (max-width: 768px) {
+	.orbit-prev,
+	.orbit-next {
+		display: none;
+	}
+}
+
+

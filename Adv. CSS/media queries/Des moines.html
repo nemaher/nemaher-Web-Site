@@ -1,0 +1,249 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Des Moines</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #878787;
+  margin: 0;
+  font: 1em/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.nav{
+	background: #045FB4;
+	text-align: center;
+	width: 75%;
+  	padding-left: 50px;
+  	padding-right: 50px;
+  	margin: auto;
+	margin-top: 50px;
+  	max-width: 960px;
+	border-radius: 20px;
+	color: white;
+}
+.logo, 
+.main-nav a {
+	display: inline-block;
+	color: #FFF;
+	text-decoration: none;
+}
+.main-nav a {
+	padding: 1em;
+	color: white;
+	font-size: 1em;
+	line-height: 1rem;
+}
+.main-nav a:hover {
+	text-decoration: underline;
+}
+.main-nav a:last-child {
+	border-right: none;
+}
+.logo{
+    float:left;
+  }
+h1 {  
+  font-size: 5.625rem; /* 90px/16px  */
+  color: rgba(255, 255, 255, 1);
+  text-transform: uppercase;
+  font-weight: normal;
+  line-height: 1.3;
+  text-shadow: 5px 8px 10px #222;
+  margin: 12px 0 0;
+}
+.photo {
+  color: white;
+  text-align: left;
+  padding: 2% 2%;
+  border-top: 5px solid #045FB4;
+  background: #434a52 url('../img/bear.jpg') no-repeat center;
+  background-size: cover;
+  box-shadow: inset 0px 0px 50px 10px rgba(0,0,0, 1);
+  border-radius: 50px 10px 50px 10px;
+}
+.main-header {
+  padding-top: 100px;
+  height: 850px;
+  background:linear-gradient(#045FB4, transparent 70%),
+             linear-gradient(0deg, #fff, transparent 80%),
+             #ffa949 url("img/8387727201_c0cc5fb292_b.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.title {
+  color: white;
+  font-size: 1.625rem; /* 26px/16px */
+  letter-spacing: .065em;
+  font-weight: 200;
+  border-bottom: 2px solid;
+  padding-bottom: 10px;
+}
+.content,
+.main-header,
+.main-footer {
+  text-align: center;
+}
+.arrow {
+  width: 50px;
+  margin-top: 150px;
+}
+.main-footer {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-bottom: 10px solid #045FB4;
+}
+.content {
+	padding-top: 80px;
+	padding-bottom: 70px;
+  	border-bottom: 2px solid #dfe2e6;
+}
+
+.content {
+  width: 75%;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: auto;
+  max-width: 960px;
+}
+ul{
+  margin: 30px 0;
+  list-style-type: none;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* Pseudo-classes ------------------ */
+
+.link a:link {
+  color: #045FB4;
+  text-decoration: none;
+}
+
+.link a:hover {
+  color: #0040FF;
+}
+
+/* Floated Columns ------------------ */
+
+.restrants,
+.todo {
+  width: 46.5%;
+}
+
+.todo {
+  float: left;
+}
+
+.restrants {
+  float: right;
+}
+/* Float Clearfix ------------------ */
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media (max-width: 1024px) {
+.content{
+    width: 85%;
+  }
+}
+@media (max-width: 800px) {
+  .content{
+    width: 100%;
+    padding: 20px;
+    border-top: none;
+  }
+  .main-header{
+    max-height: 380px;
+    padding: 50px 25px 0;
+  }
+  .title{
+    font-size: 1.3rem;
+    border: none;
+  }
+  h1{
+    font-size: 5rem;
+    line-height: 1.1;
+  }
+  .arrow{
+    display: none;
+  }
+
+  .main-footer {
+    padding: 20px 0;
+  }
+}
+@media (max-width: 600px){
+	.restrants,
+	.todo {
+    float: none;
+    width: 100%;
+  }
+  .logo{
+	float:none;
+  }
+}
+
+</style>
+</head>
+<body>
+ <header id="top" class="main-header">
+ <meta name="viewport" content="width=device-width">
+      <span class="title">Fields of Opportunity</span>
+      <h1>Des Moines, Iowa</h1>
+      <img class="arrow" src="img/arrow.svg" alt="Down arrow">
+    </header>
+    <div class="nav">
+       <img src="img/iowa.png" height="50px" class="logo">
+       			<nav class="main-nav">
+				<a href="#">Link 1</a>
+				<a href="#">Link 2</a>
+				<a href="#">Link 3</a>
+				<a href="#">Link 4</a>
+				<a href="#">Link 5</a>
+			</nav>
+     </div>
+    
+    <div class="content group"> 
+      <div class="restrants">
+        <img src="img/801grand.jpeg" alt="801 Grand" class="photo">
+        <h3>Where To Eat</h3>
+        <p>
+         Des Moines Iowa has a variety of places to eat. Weather you’re in the mood for classic fine dinning or willing to try something new Des Moines got it. These are some place I would recommend you check out:
+        </p>
+        <ul>
+          <li class="link"><a href="http://zombieburgerdm.com">Zombie Burger</a></li>
+          <li class="link"><a href="https://801restaurantgroup.com">801 Grand</a></li>
+          <li class="link"><a href="http://fongspizza.com">Fongs Pizza</a></li>
+        </ul>		
+      </div>
+      
+      <div class="todo">
+        <img src="img/Capitol.jpeg" alt="Capital" class="photo">
+        <h3>Things To Do</h3>
+        <p>
+          There are lots of things to do in down town Des Moines. Whether your here with family, business, or with friends there’s a variety of interesting places to go. Here are a few suggestions:
+        </p>
+        <ul>
+          <li class="link"><a href="https://www.legis.iowa.gov/resources/tourCapitol">Iowa State Capital</a></li>
+          <li class="link"><a href="http://www.sciowa.org">Science Center</a></li>
+          <li class="link"><a href="http://www.iowaeventscenter.com/wells-fargo-arena/">Wells Fargo Arena</a></li>
+        </ul>
+      </div>
+		</div><!-- End .secondary-content -->
+        
+    <footer class="main-footer">
+			<p>All rights reserved to the state of <a href="#">Iowa</a>.</p>
+			<a href="#top">Back to top &raquo;</a>
+	</footer>
+
+</body>
+</html>

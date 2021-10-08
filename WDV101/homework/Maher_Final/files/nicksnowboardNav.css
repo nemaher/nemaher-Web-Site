@@ -1,0 +1,52 @@
+
+/* Navigation bar styles */
+/* WDV101 Final Project*/
+/* Nicholas Maher */
+/* 5/1/2015 */
+
+header{
+	width: 1050px;
+	height: 50px;
+}
+
+header h1{
+	padding: 10px 10px 10px 10px;
+	font-weight:bold;
+	color:black;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+	text-align: center;
+	font-family: Denmark, sans serif;
+	font-size: 2.5em;
+	background: url(images/images.jpeg) repeat;
+}
+
+img.logo{
+	float: left;
+	width: 134px;
+	height: 99px;
+}
+
+nav {
+  border: solid 2px black;
+  color: blue;
+  background-color: white;
+  vertical-align: middle;
+  height: 34px;
+  width: 1047px;
+  padding-top: 14px;
+}
+
+nav ul li {
+   list-style-type: none;
+   display: inline;		
+   margin-right: 2em;
+   height: 34px;
+   padding: 5px;	
+}
+
+nav ul li a:hover {
+  color: purple;
+  background-color: orange;
+  text-decoration: none;
+  font-style: oblique;
+}

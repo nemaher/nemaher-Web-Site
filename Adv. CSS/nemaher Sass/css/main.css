@@ -1,0 +1,293 @@
+/**********************************
+COLORS
+***********************************/
+/**********************************
+GENERAL
+***********************************/
+/* line 17, main.scss */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: white;
+  color: #999999;
+}
+
+/* line 23, main.scss */
+#wrapper {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+/* line 29, main.scss */
+a {
+  text-decoration: none;
+  color: #7fb2f0;
+}
+
+/*nav link*/
+/* line 35, main.scss */
+nav a, nav a:visited {
+  color: white;
+}
+
+/*selected nav link*/
+/* line 40, main.scss */
+nav a.selected, nav a:hover {
+  color: #35478c;
+}
+
+/* line 44, main.scss */
+img {
+  max-width: 100%;
+}
+
+/* line 48, main.scss */
+h3 {
+  margin: 0 0 1em 0;
+}
+
+/**********************************
+HEADING
+***********************************/
+/* line 56, main.scss */
+header {
+  float: left;
+  margin: 0 0 30px 0;
+  padding: 5px 0 0 0;
+  width: 100%;
+  background: #7fb2f0;
+  border-color: #4e7ac7;
+}
+@media screen and (min-width: 660px) {
+  /* line 56, main.scss */
+  header {
+    border-bottom: 5px solid #4e7ac7;
+    margin-bottom: 60px;
+  }
+}
+
+/* line 70, main.scss */
+#logo {
+  text-align: center;
+  margin: 0;
+}
+@media screen and (min-width: 660px) {
+  /* line 70, main.scss */
+  #logo {
+    float: left;
+    margin-left: 5%;
+    text-align: left;
+    width: 45%;
+  }
+}
+
+/* line 82, main.scss */
+h1 {
+  font-family: 'Changa One', sans-serif;
+  margin: 15px 0;
+  font-size: 1.75em;
+  font-weight: normal;
+  line-height: 0.8em;
+  color: white;
+}
+@media screen and (min-width: 660px) {
+  /* line 82, main.scss */
+  h1 {
+    font-size: 2.5em;
+  }
+}
+
+/* line 95, main.scss */
+h2 {
+  font-size: 0.75em;
+  margin: -5px 0 0;
+  font-weight: normal;
+  color: white;
+}
+@media screen and (min-width: 660px) {
+  /* line 95, main.scss */
+  h2 {
+    font-size: 0.825em;
+    margin-bottom: 20px;
+  }
+}
+
+/**********************************
+NAVIGATION
+***********************************/
+/* line 111, main.scss */
+nav {
+  text-align: center;
+  padding: 10px 0;
+  margin: 20px 0 0;
+  background: #4e7ac7;
+}
+@media screen and (min-width: 660px) {
+  /* line 111, main.scss */
+  nav {
+    background: none;
+    float: right;
+    font-size: 1.25em;
+    margin-right: 5%;
+    text-align: right;
+    width: 45%;
+  }
+}
+/* line 126, main.scss */
+nav ul {
+  list-style: none;
+  margin: 0 10px;
+  padding: 0;
+}
+/* line 132, main.scss */
+nav li {
+  display: inline-block;
+}
+/* line 135, main.scss */
+nav a {
+  font-weight: 800;
+  padding: 15px 10px;
+}
+
+/**********************************
+FOOTER
+***********************************/
+/* line 145, main.scss */
+footer {
+  font-size: 0.75em;
+  text-align: center;
+  clear: both;
+  padding-top: 50px;
+  color: #ccc;
+}
+
+/* line 153, main.scss */
+.social-icon {
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+}
+
+/**********************************
+PAGE: PORTFOLIO
+***********************************/
+/* line 163, main.scss */
+#gallery {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media screen and (min-width: 480px) {
+  /* line 169, main.scss */
+  #gallery li:nth-child(4n) {
+    clear: left;
+  }
+}
+/* line 173, main.scss */
+#gallery li {
+  float: left;
+  width: 45%;
+  margin: 2.5%;
+  background-color: whitesmoke;
+  color: #bdc3c7;
+}
+@media screen and (min-width: 480px) {
+  /* line 173, main.scss */
+  #gallery li {
+    width: 28.333%;
+  }
+}
+/* line 185, main.scss */
+#gallery li a :hover {
+  background: #7fb2f0;
+  color: white;
+  transition-duration: 1s;
+  transform: scale(1.2);
+}
+/* line 191, main.scss */
+#gallery li a p {
+  margin: 0;
+  padding: 5%;
+  font-size: 0.75em;
+  color: #bdc3c7;
+}
+
+/**********************************
+PAGE: ABOUT
+***********************************/
+@-webkit-keyframes spin-photo {
+  /* line 206, main.scss */
+  0% {
+    -webkit-transform: rotate(0);
+  }
+
+  /* line 207, main.scss */
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+/* line 210, main.scss */
+.profile-photo {
+  display: block;
+  max-width: 250px;
+  margin: 0 auto 30px;
+  border-radius: 100%;
+  -webkit-animation: spin-photo 1.5s ease-in-out;
+}
+@media screen and (min-width: 480px) {
+  /* line 210, main.scss */
+  .profile-photo {
+    float: left;
+    margin: 0 5% 80px 0;
+  }
+}
+
+/**********************************
+PAGE: CONTACT
+***********************************/
+/* line 228, main.scss */
+.contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9em;
+}
+/* line 234, main.scss */
+.contact-info a {
+  display: block;
+  min-height: 20px;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  padding: 0 0 0 30px;
+  margin: 0 0 10px;
+}
+/* line 243, main.scss */
+.contact-info li.phone a {
+  background-image: url("../img/phone.png");
+}
+/* line 247, main.scss */
+.contact-info li.mail a {
+  background-image: url("../img/mail.png");
+}
+/* line 251, main.scss */
+.contact-info li.twitter a {
+  background-image: url("../img/twitter.png");
+}
+
+/**********************************
+TWO COLUMN LAYOUT
+***********************************/
+@media screen and (min-width: 480px) {
+  /* line 261, main.scss */
+  #primary {
+    width: 50%;
+    float: left;
+  }
+
+  /* line 266, main.scss */
+  #secondary {
+    width: 40%;
+    float: right;
+  }
+}

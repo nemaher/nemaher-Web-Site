@@ -1,0 +1,22 @@
+@charset "UTF-8";
+/* CSS Document */
+
+ /*Tutorial 3, Case Problem 1 Your Name: Nick Maher Today's Date: 2/16/15*/
+	
+
+	body{
+		font-family: Arial, sans-serif;
+		font-size: 1.2em;
+		background-color: #e6e6fa;
+		}
+	em{
+		color: green;
+		font-weight: bold;}
+	h3{
+		color: maroon;
+		text-align: right;
+		text-transform: uppercase;
+		font-size: 1.3em;
+		font-family: "Times New Roman", Times, serif;}
+
+	

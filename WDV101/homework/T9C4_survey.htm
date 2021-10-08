@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "UTF-8">
+  <!--
+    Tutorial 9, Case 4
+    Your Name:  Nicholas Maher
+    Today's Date: 4/28/15
+
+  -->
+
+<script src="modernizr-2.js"></script>
+<title>College Student Survey</title>
+
+<style type="text/css">
+
+* { 
+  margin: 0; 
+  padding: 0;
+}
+body{
+	font: normal normal 1.3em Arial, Helvetica, sans-serif;
+	color: #292F3D;
+	background-color: #C7D1C9;
+}
+
+#container {
+  width: 80%;
+  margin: 0 auto;
+  border-width: 1px;
+}
+
+form {
+  margin-top: 1em;
+  border: solid 2px navy;
+  padding: 1em;
+  font-size: 16px;
+}
+
+
+label {
+	width: 170px;
+  margin-right: 15px;
+  color: black;
+  float: left;
+  text-align: right;
+  font-weight: bold;
+}
+
+select{
+	float: left;
+}
+
+img { 
+   display: block;
+   margin: 0 auto;
+}
+
+fieldset{
+	width: 80%;
+	margin: 1em auto;
+	border: solid 5px #354660;
+	padding: 0.5em;
+	background-color: #e9edda;
+}
+
+legend{
+	padding: 0 10px;
+	color: #354660;
+	font-weight: bold;
+}
+
+input.button{
+	margin: 10px;
+	border: solid thin black;
+	color: black;
+	background-color: #3399FF;
+	font-weight: bold;
+	display: inline;
+	padding: 5px;
+}
+input{
+	display: block;
+	float: left;
+}
+
+.clear{
+	clear: both;
+}
+.inline{
+	display: inline;
+}
+.simple{
+	font-weight: normal;
+	width: 70px;
+	margin-bottom: 5px;
+}
+
+</style>
+
+</head>
+
+<body>
+<section id="container">
+
+<p><img src="images/Unknown.gif" alt="survey logo image" width="600" height="100" /></p>
+
+<form id="mailing" action="">
+
+<!-- enter your forms code below -->
+	<fieldset><legend>Personal Information</legend>
+		<label for = "firstname">First Name</label>
+		<input type = "text" name = "firstname" id = "firstname" size = "15"/>
+		
+		<label for = "lastname" class = "clear">Last Name</label>
+		<input type = "text" name = "lastname" id = "lastname" size = "20"/>
+				
+		<label for = "email" class = "clear">Email</label>
+		<input type = "email" name = "email" id = "email" size = "40" />
+		
+		<label for = "major" class = "clear">Major</label>
+		<select name = "major" id = "major" size = "1">
+			<option value = "no" selected = "selected">{Undecided}</option>
+			<option value = "artDesign">Art & Design</option>
+			<option value = "business">Business</option>
+			<option value = "engineering">Engineering</option>
+			<option value = "humanStudies">Human/Social Studies</option>
+			<option value = "liberalArts">Liberal Arts</option>
+			<option value = "math">Math</option>
+			<option value = "medicine">Medicine</option>
+			<option value = "science">Science</option>
+		</select>
+		
+		<label for = "password" class = "clear">Password</label>
+		<input type = "password" name = "password" id = "password" size = "10" maxlength = "10" />
+	</fieldset>
+	
+	<fieldset><legend>Facilities (rate each category)</legend>
+
+			<label>Campus Housing</label>
+				<label for = "excellent" class = "simple">Excellent</label>
+				<input type = "radio" name = "housing" id = "housingexcellent" checked = "checked"/>
+				<label for = "fair" class = "simple">Fair</label>
+				<input type = "radio" name = "housing" id = "housingfair" />
+				<label for = "poor" class = "simple">Poor</label>
+				<input type = "radio" name = "housing" id = "housingpoor" />
+				<label for = "na" class = "simple">N/A</label>
+				<input type = "radio" name = "housing" id = "housingna" />
+				
+		<label class = "clear">Housing Availability</label>
+				<label for = "excellent" class = "simple">Excellent</label>
+				<input type = "radio" name = "housingAvailability" id = "housingAvailabilityexcellent" checked = "checked"/>
+				<label for = "fair" class = "simple">Fair</label>
+				<input type = "radio" name = "housingAvailability" id = "housingAvailabilityfair" />
+				<label for = "poor" class = "simple">Poor</label>
+				<input type = "radio" name = "housingAvailability" id = "housingAvailabilitypoor" />
+				<label for = "na" class = "simple">N/A</label>
+				<input type = "radio" name = "housingAvailability" id = "housingAvailabilityna" />
+		
+		<label class = "clear">Student Center</label>
+				<label for = "excellent" class = "simple">Excellent</label>
+				<input type = "radio" name = "studentCenter" id = "studentCenterexcellent" checked = "checked"/>
+				<label for = "fair" class = "simple">Fair</label>
+				<input type = "radio" name = "studentCenter" id = "studentCenterfair" />
+				<label for = "poor" class = "simple">Poor</label>
+				<input type = "radio" name = "studentCenter" id = "studentCenterpoor" />
+				<label for = "na" class = "simple">N/A</label>
+				<input type = "radio" name = "studentCenter" id = "studentCenterna" />
+		
+		<label class = "clear">Classrooms</label>
+				<label for = "excellent" class = "simple">Excellent</label>
+				<input type = "radio" name = "classrooms" id = "classroomsexcellent" checked = "checked"/>
+				<label for = "fair" class = "simple">Fair</label>
+				<input type = "radio" name = "classrooms" id = "classroomsfair" />
+				<label for = "poor" class = "simple">Poor</label>
+				<input type = "radio" name = "classrooms" id = "classroomspoor" />
+				<label for = "na" class = "simple">N/A</label>
+				<input type = "radio" name = "classrooms" id = "classroomsna" />
+				
+		<label class = "clear">Parking</label>
+				<label for = "excellent" class = "simple">Excellent</label>
+				<input type = "radio" name = "parking" id = "parkingexcellent" checked = "checked"/>
+				<label for = "fair" class = "simple">Fair</label>
+				<input type = "radio" name = "parking" id = "parkingfair" />
+				<label for = "poor" class = "simple">Poor</label>
+				<input type = "radio" name = "parking" id = "parkingpoor" />
+				<label for = "na" class = "simple">N/A</label>
+				<input type = "radio" name = "parking" id = "parkingna" />
+	</fieldset>
+	
+	<fieldset><legend>Courses (rate each category)</legend>
+		<label>Availability</label>
+				<label for = "excellent" class = "simple">Excellent</label>
+				<input type = "radio" name = "availability" id = "coursesavailabilityexcellent" checked = "checked"/>
+				<label for = "fair" class = "simple">Fair</label>
+				<input type = "radio" name = "availability" id = "coursesavailabilityfair" />
+				<label for = "poor" class = "simple">Poor</label>
+				<input type = "radio" name = "availability" id = "coursesavailabilitypoor" />
+				<label for = "na" class = "simple">N/A</label>
+				<input type = "radio" name = "availability" id = "coursesavailabilityna" />
+				
+		<label class = "clear">Ease of Registration</label>
+				<label for = "excellent" class = "simple">Excellent</label>
+				<input type = "radio" name = "easeOfRegistration" id = "easeOfRegistrationexcellent" checked = "checked"/>
+				<label for = "fair" class = "simple">Fair</label>
+				<input type = "radio" name = "easeOfRegistration" id = "easeOfRegistrationfair" />
+				<label for = "poor" class = "simple">Poor</label>
+				<input type = "radio" name = "easeOfRegistration" id = "easeOfRegistrationpoor" />
+				<label for = "na" class = "simple">N/A</label>
+				<input type = "radio" name = "easeOfRegistration" id = "easeOfRegistrationna" />
+				
+		<label class = "clear">Relevance</label>
+				<label for = "excellent" class = "simple">Excellent</label>
+				<input type = "radio" name = "relevance" id = "courserelevanceexcellent" checked = "checked"/>
+				<label for = "fair" class = "simple">Fair</label>
+				<input type = "radio" name = "relevance" id = "courserelevancefair" />
+				<label for = "poor" class = "simple">Poor</label>
+				<input type = "radio" name = "relevance" id = "courserelevancepoor" />
+				<label for = "na" class = "simple">N/A</label>
+				<input type = "radio" name = "relevance" id = "courserelevancena" />
+				
+		<label class = "clear">Satisfaction</label>
+				<label for = "excellent" class = "simple">Excellent</label>
+				<input type = "radio" name = "satisfaction" id = "coursesatisfactionexcellent" checked = "checked"/>
+				<label for = "fair" class = "simple">Fair</label>
+				<input type = "radio" name = "satisfaction" id = "coursesatisfactionfair" />
+				<label for = "poor" class = "simple">Poor</label>
+				<input type = "radio" name = "satisfaction" id = "coursesatisfactionpoor" />
+				<label for = "na" class = "simple">N/A</label>
+				<input type = "radio" name = "satisfaction" id = "coursesatisfactionna" />
+	</fieldset>
+	
+	<fieldset><legend>Campus</legend>
+		<label>Activities</label>
+				<label for = "excellent" class = "simple">Excellent</label>
+				<input type = "radio" name = "activities" id = "activitiesexcellent" checked = "checked"/>
+				<label for = "fair" class = "simple">Fair</label>
+				<input type = "radio" name = "activities" id = "activitiesfair" />
+				<label for = "poor" class = "simple">Poor</label>
+				<input type = "radio" name = "activities" id = "activitiespoor" />
+				<label for = "na" class = "simple">N/A</label>
+				<input type = "radio" name = "activities" id = "activitiesna" />
+		
+		<textarea name = "activitiesNotes" id = "activitiesNotes" rows = "4" cols = "75">Please list the activities you participate in, and any additional activities you would like to see.</textarea>
+		
+		<label class = "clear">Services</label>
+				<label for = "excellent" class = "simple">Excellent</label>
+				<input type = "radio" name = "services" id = "servicesexcellent" checked = "checked"/>
+				<label for = "fair" class = "simple">Fair</label>
+				<input type = "radio" name = "services" id = "servicesfair" />
+				<label for = "poor" class = "simple">Poor</label>
+				<input type = "radio" name = "services" id = "servicespoor" />
+				<label for = "na" class = "simple">N/A</label>
+				<input type = "radio" name = "services" id = "servicesna" />
+		
+		<textarea name = "servicesNotes" id = "servicesNotes" rows = "4" cols = "75">Please list the campus services you used, and any additional services you would like to see.</textarea>	
+	</fieldset>
+	
+	<fieldset><legend>Finances (check all that apply)</legend>
+		<label>Scholarship Availability</label>
+				<label for = "easyToFind" class = "simple">Easy to Find</label>
+				<input type = "checkbox" name = "scholarshipAvailability" id = "scholarshipAvailabilityeasyToFind" checked = "checked"/>
+				<label for = "hardToFind" class = "simple">Hard to Find</label>
+				<input type = "checkbox" name = "scholarshipAvailability" id = "scholarshipAvailabilityhardToFind"/>
+				<label for = "coveredAll" class = "simple">Covered All Expenses</label>
+				<input type = "checkbox" name = "scholarshipAvailability" id = "scholarshipAvailabilitycoveredAll" />
+				<label for = "coveredSome" class = "simple">Covered Some Expenses</label>
+				<input type = "checkbox" name = "scholarshipAvailability" id = "scholarshipAvailabilitycoveredSome" />
+				<label for = "noAid" class = "simple">Did Not Find Any</label>
+				<input type = "checkbox" name = "scholarshipAvailability" id = "scholarshipAvailabilitynoAid" />
+				
+		<label class = "clear">Tuition Cost</label>
+				<label for = "seemsLow" class = "simple">Seems Low</label>
+				<input type = "checkbox" name = "tuitionCost" id = "tuitionCostseemsLow" checked = "checked"/>
+				<label for = "justRight" class = "simple">Just Right</label>
+				<input type = "checkbox" name = "tuitionCost" id = "tuitionCostjustRight"/>
+				<label for = "tooHigh" class = "simple">Too High</label>
+				<input type = "checkbox" name = "tuitionCost" id = "tuitionCosttooHigh" />
+				<label for = "neededLoans" class = "simple">Needed Loans</label>
+				<input type = "checkbox" name = "tuitionCost" id = "tuitionCostneededLoans" />
+				<label for = "noLoans" class = "simple">Did Not Need Loans</label>
+				<input type = "checkbox" name = "tuitionCost" id = "tuitionCostnoLoans" />
+	</fieldset>
+	
+	<fieldset>
+		<input type = "submit" value = "Send Information" class = "button" />
+		<input type = "reset" value = "Reset" class = "button" />
+	</fieldset>
+	
+</form>
+
+</section> 
+
+</body>
+</html>

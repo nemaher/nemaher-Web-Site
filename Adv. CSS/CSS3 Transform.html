@@ -1,0 +1,274 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>3D and 2D transformations</title>
+<style>
+
+.rotate
+{
+	width:300px;
+    height:200px;
+    background:blue;
+    transition:all 1s ease;
+	padding-top:.5em;
+	padding-bottom:.5em;
+}
+.rotate:hover
+{
+-ms-transform: rotate(20deg); /* IE 9 */
+    -webkit-transform: rotate(20deg); /* Safari */
+    transform: rotate(20deg);	
+}
+.scale
+{
+	background-color: red;
+	width:300px;
+    height:200px;
+    transition:all 1s ease;
+	padding-top:.5em;
+	padding-bottom:.5em;
+}
+.scale:hover
+{
+-ms-transform: scale(0.5,0.5); /* IE 9 */
+    -webkit-transform: scale(0.5,0.5); /* Safari */
+    transform: scale(0.5,0.5);	
+}
+.skewy
+{
+	width:300px;
+    height:200px;
+    background:blue;
+    transition:all 1s ease;
+	padding-top:.5em;
+	padding-bottom:.5em;
+}
+.skewy:hover
+{
+ -ms-transform: skewY(30deg); /* IE 9 */
+    -webkit-transform: skewY(30deg); /* Safari */
+    transform: skewY(30deg);	
+}
+.skewx
+{
+	width:300px;
+    height:200px;
+    background:red;
+    transition:all 1s ease;
+	padding-top:.5em;
+	padding-bottom:.5em;
+}
+.skewx:hover
+{
+	-ms-transform: skewx(30deg); /* IE 9 */
+    -webkit-transform: skewx(30deg); /* Safari */
+    transform: skewx(30deg);	
+}
+.rotatex
+{
+	width:300px;
+    height:200px;
+    background:red;
+    transition:all 1s ease;
+	padding-top:.5em;
+	padding-bottom:.5em;
+}
+.rotatex:hover
+{
+	-webkit-transform: rotateX(150deg); /* Safari */
+    transform: rotateX(150deg);
+}
+.rotatey
+{
+	width:300px;
+    height:200px;
+    background:blue;
+    transition:all 1s ease;
+	padding-top:.5em;
+	padding-bottom:.5em;
+}
+.rotatey:hover
+{
+ -webkit-transform: rotateY(130deg); /* Safari */
+    transform: rotateY(130deg);
+}
+.rotatez
+{
+	width:300px;
+    height:200px;
+    background:red;
+    transition:all 1s ease;
+	padding-top:.5em;
+	padding-bottom:.5em;
+}
+.rotatez:hover
+{
+	-webkit-transform: rotateZ(90deg); /* Safari */
+    transform: rotateZ(90deg);
+}
+.rotatexyz
+{
+	width:300px;
+    height:200px;
+    background:blue;
+    transition:all 1s ease;
+	padding-top:.5em;
+	padding-bottom:.5em;
+}
+.rotatexyz:hover
+{
+	transform:rotate3d(1,1,1,90deg);
+-ms-transform:rotate3d(1,1,1,90deg); /* IE */
+-moz-transform:rotate3d(1,1,1,90deg); /* Firefox */
+-webkit-transform:rotate3d(1,1,1,90deg) ; /* Safari and Chrome */
+-o-transform:rotate3d(1,1,1,90deg); /* Opera */
+}
+
+p
+{
+	color:white;
+	text-align:center;
+	padding-top:1em;
+	font-size:2em;
+	font-family:"Comic Sans MS", cursive, sans-serif;
+}
+table
+{
+	border:solid 1em black;
+}
+td
+{
+	boarder: solid 2px black;
+}
+h1
+{
+	text-align:center
+}
+/*how deep the image looks*/
+body{
+  -webkit-perspective:800px;
+  -webkit-perspective-origin: 50% 50%;
+}
+
+.wrap{
+  transition: -webkit-transform 1s ease-in;
+  -webkit-transform-style: preserve-3d;
+}
+
+/*place images over eachother*/
+.wrap div{
+  position:absolute;
+  -webkit-backface-visibility:hidden;
+}
+
+.side-a{
+  z-index:100;
+}
+
+.side-b{
+  -webkit-transform:rotateY(-180deg);
+}
+
+.wrap:hover{
+  -webkit-transform: rotateY(180deg);
+}
+
+body {
+	padding-top: 50px;
+	background: #F7F7F7;
+}
+.wrap {
+	position: relative;
+	margin: 0 auto;
+	width: 250px;
+	height: 350px;
+	cursor: pointer;
+}
+.wrap div {
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	background-position: 50% 50%;
+	background-size: 150px;
+	background-repeat: no-repeat;
+	box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
+	color: #FFF;
+	text-align: center;
+	text-shadow: 0 1px rgba(0,0,0,.3);
+	font: bold 3em sans-serif;
+	line-height: 350px;
+}
+.side-a {
+	background: #498FBC url('images/mike.png');
+}
+.side-b {
+	background: #33363B url('images/logo.png');
+}
+</style>
+</head>
+
+
+<h1>2D and 3D Transformations</h1>
+<table align="center">
+<tr>
+<td>
+<div class="rotate" >
+<p>Rotate</p>
+</div>
+</td>
+
+<td>
+<div class="scale" >
+<p>Scale</p>
+</div>
+</td>
+
+<td>
+<div class="skewy" >
+<p>Skew Y</p>
+</div>
+</td>
+
+<td>
+<div class="skewx" >
+<p>Skew X</p>
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<div class="rotatex">
+<p>Rotate X</p>
+</div>
+</td>
+
+<td>
+<div class="rotatey">
+<p>RotateY</p>
+</div>
+</td>
+
+<td>
+<div class="rotatez">
+<p>RotateZ</p>
+</div>
+</td>
+
+<td>
+<div class="rotatexyz">
+<p>Rotate XYZ</p>
+</div>
+</td>
+</tr>
+</table>
+
+<body>
+<h1>Card Flip</h1>
+	<div class="wrap">
+		<div class="side-a"></div>
+		<div class="side-b"></div>
+	</div>
+</body>
+</html>

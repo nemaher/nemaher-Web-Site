@@ -1,0 +1,34 @@
+/* line 7, main.scss */
+div {
+  height: 100px;
+  width: 255px;
+  border: 1px solid black;
+}
+
+/* line 13, main.scss */
+.color {
+  background: #aa6699;
+}
+
+/* line 17, main.scss */
+.red, .blue, .green {
+  float: left;
+}
+
+/* line 21, main.scss */
+.red {
+  background: red;
+  width: 170px;
+}
+
+/* line 26, main.scss */
+.blue {
+  background: blue;
+  width: 153px;
+}
+
+/* line 31, main.scss */
+.green {
+  background: green;
+  width: 102px;
+}

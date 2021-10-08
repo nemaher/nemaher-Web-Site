@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*Tutorial 3, Case Problem 2 Your Name: Nick Maher Today's Date: 2/16/15*/
+
+	body{
+		font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+		background-color: #c0e59b;}
+		
+	h1{
+		text-align: center}
+	
+	h2{
+		color: navy;}	
+	
+	h3{
+		font-weight: bold;
+		color: navy;}
+		
+	h4{
+		color: maroon;
+		text-transform: upercase;
+		font-style:italic;}
+		
+	p{
+		text-indent: 5em;
+		line-height: 1.5em;}
+		
